@@ -33,13 +33,13 @@ Ao clicar em um usuário, você será redirecionado para esta página:
 ![Img 3](https://github.com/JorgeBaes/Calendar-Agenda/blob/master/public/images/user_page.png)
 
 ## tags
-Possui nome, cor de fundo e cor de texto. Para criar as tags vá em:
-![Img 4](https://github.com/JorgeBaes/Calendar-Agenda/blob/master/public/images/create_tag.png)
-Ao criar a Tag ela estará disponível na lista de tags e você pode criar tasks desta tag, que contém título, texto e data:
+Possui nome, cor de fundo e cor de texto.
+<!-- ![Img 4](https://github.com/JorgeBaes/Calendar-Agenda/blob/master/public/images/create_tag.png) -->
+Ao criar uma Tag ela estará disponível na lista de tags e você pode criar tasks desta tag, que contém título, texto e data:
 ![Img 5](https://github.com/JorgeBaes/Calendar-Agenda/blob/master/public/images/create_task.png)
 ## events / notes
-Os eventos são semelhantes às tasks: tem título, texto e data. As notas contém apenas título e texto. Para criá-los, vá em:
-![Img 6](https://github.com/JorgeBaes/Calendar-Agenda/blob/master/public/images/create_event_notes.png)
+Os eventos são semelhantes às tasks: tem título, texto e data. As notas contém apenas título e texto.
+<!-- ![Img 6](https://github.com/JorgeBaes/Calendar-Agenda/blob/master/public/images/create_event_notes.png) -->
 
 ## calendar
 O calendário mostra todas as tasks (quadrado) e eventos (circulos) marcados. E para acessar as tasks e eventos, clique neles no calendário:
