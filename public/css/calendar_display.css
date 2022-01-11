@@ -48,16 +48,21 @@
    margin: 0px 1px ;
    font-size: 1.5rem;
    overflow-x: hidden;   
-   box-shadow: 0px 0px 5px #000000;
+   box-shadow: 0px 0px 2px #000000;
    transition: 1.5s;
 }
 .calendar-display-header-row-day:hover{
-   box-shadow: 0px 0px 10px #000000;
+   box-shadow: 0px 0px 4px #000000;
    transition: 200ms;
 }
-.calendar-display-event-task-holder{
-   /* padding: 0px 0px 15px 0px; */
+
+.calendar-display-header-row-day-today{
+   background-color: rgb(230, 230, 230);
 }
+
+/* .calendar-display-event-task-holder{
+   padding: 0px 0px 15px 0px; 
+} */
 
 .calendar-display-task-div{
    margin: 0px 2px;

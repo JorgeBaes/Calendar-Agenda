@@ -57,10 +57,25 @@ function go_to_user(user_id){
     update_color_inputs()
 
     update_colors_contrast_class()
+
+    user_indicator.innerText = current_user().name
 }
 
 
 function update_side_tag_holder(){
+
+    const today_date = new Date()
+
+    let array_of_tag_that_have_task = 
+    current_user().tags.map( tag => {
+        for(let i in tag.tasks){
+            if(diff_dates(new Date(tag.tasks[i].date),today_date) <= 7){
+                return tag.id
+            }
+        }
+        return null
+    }).filter( el => el != null)
+
     side_tag_holder_tbody.innerHTML = 
     `
     <div class="side-tag-holder-title text-center d-flex span-to-change-color-ghost div-to-change-backgroundcolor div-to-change-box-shadow">
@@ -76,10 +91,12 @@ function update_side_tag_holder(){
         side_tag_holder_tbody.innerHTML += 
         `
         <div class="side-tag-holder d-md-inline-flex text-center">
-            <div class="tag-holder-data1"  style="background:${tag.color};color:${tag.text_color}; font-size:1.2rem; line-height:3rem;">${tag.tasks.length}</div>
+            <div class="tag-holder-data1 pointer" onclick="open_tag_on_another_tab('${tag.user_id}','${tag.id}')" style="background:${tag.color};color:${tag.text_color}; font-size:1.2rem; line-height:3rem;">
+            ${array_of_tag_that_have_task.indexOf(tag.id)!=-1?png_star:tag.tasks.length}
+            </div>
             <div class="tag-holder-data2 pointer" onclick="open_tag_on_another_tab('${tag.user_id}','${tag.id}')"  style="background:${tag.color};color:${tag.text_color};">${tag.name}</div>
             <div class="tag-holder-data3 pointer"  style="background:${tag.color};color:${tag.text_color};" onclick="open_create_task('${tag.id}')">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="${tag.text_color}" class="svg-animate" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px"
+            <svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" fill="${tag.text_color}" class="svg-animate" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px"
             viewBox="0 0 1000 1000" enable-background="new 0 0 1000 1000" xml:space="preserve" width="2.6rem" heigth="2.6rem" style="margin-bottom:10px">            
             <g>
                 <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)">
@@ -121,7 +138,7 @@ function update_events_display(){
 
         events_display_body.innerHTML += 
         `
-        <div class="events-display-holder d-md-inline-flex text-center">
+        <div class="events-display-holder div-to-change-backgroundcolor-ghost d-md-inline-flex text-center">
             <div class="events-display-data1 div-to-change-backgroundcolor span-to-change-color-ghost">${convert_date_to_string(event.date)}</div>
             <div class="events-display-data2 pointer div-to-change-backgroundcolor span-to-change-color-ghost" onclick="open_event_display('${event.id}')">${event.name}</div>
             <div class="events-display-data3 pointer div-to-change-backgroundcolor span-to-change-color-ghost" onclick="request_delete_event_('${event.id}')">
@@ -172,6 +189,22 @@ function update_notes_display(){
                 </p>
             </div>
             <div style="position:relative; bottom:10px; right:5px; text-align:right;">
+            <span onclick="open_edit_note('${note.id}')">            
+                <svg xmlns="http://www.w3.org/2000/svg" fill="#000000" class="svg-animate svg-garbage pointer" height="18px" width="18px" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 477.873 477.873" style="enable-background:new 0 0 477.873 477.873; margin-right:-7px" xml:space="preserve">
+                <title>Editar</title>
+                <g>
+                    <g>
+                        <path d="M392.533,238.937c-9.426,0-17.067,7.641-17.067,17.067V426.67c0,9.426-7.641,17.067-17.067,17.067H51.2    c-9.426,0-17.067-7.641-17.067-17.067V85.337c0-9.426,7.641-17.067,17.067-17.067H256c9.426,0,17.067-7.641,17.067-17.067    S265.426,34.137,256,34.137H51.2C22.923,34.137,0,57.06,0,85.337V426.67c0,28.277,22.923,51.2,51.2,51.2h307.2    c28.277,0,51.2-22.923,51.2-51.2V256.003C409.6,246.578,401.959,238.937,392.533,238.937z"/>
+                    </g>
+                </g>
+                <g>
+                    <g>
+                        <path d="M458.742,19.142c-12.254-12.256-28.875-19.14-46.206-19.138c-17.341-0.05-33.979,6.846-46.199,19.149L141.534,243.937    c-1.865,1.879-3.272,4.163-4.113,6.673l-34.133,102.4c-2.979,8.943,1.856,18.607,10.799,21.585    c1.735,0.578,3.552,0.873,5.38,0.875c1.832-0.003,3.653-0.297,5.393-0.87l102.4-34.133c2.515-0.84,4.8-2.254,6.673-4.13    l224.802-224.802C484.25,86.023,484.253,44.657,458.742,19.142z"/>
+                    </g>
+                </g><g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
+                </svg> &nbsp;
+            </span> 
+            
             <span onclick="request_to_delete_note('${note.user_id}','${note.id}')">            
                 <svg xmlns="http://www.w3.org/2000/svg" fill="#000000" class="svg-animate svg-garbage pointer" height="18px" width="18px" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
                 <title>Deletar</title>
@@ -195,9 +228,11 @@ function update_notes_display(){
                         <path d="M166,180c-8.284,0-15,6.716-15,15v212c0,8.284,6.716,15,15,15s15-6.716,15-15V195C181,186.716,174.284,180,166,180z"/>
                     </g>
                 </g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g>/g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg>
-
             </span>
+            
             </div>
+
+            
         </div>
         `
     })
@@ -218,6 +253,11 @@ function update_colors_contrast_class(){
         div.style.background = current_user().text_color+"70"
     })
 
+    const list_of_div_to_change_background_to_color = [...document.getElementsByClassName("div-to-change-backgroundcolor-to-color")]
+    list_of_div_to_change_background_to_color.forEach( div =>{
+        div.style.background = current_user().color+"60"
+    })
+
     const list_of_svg_to_change_color = [...document.getElementsByClassName("svg-to-change-color-background-color")]
     list_of_svg_to_change_color.forEach( svg =>{
         svg.style.fill = current_user().color
@@ -232,6 +272,8 @@ function update_colors_contrast_class(){
     list_of_div_to_change_box_shadow.forEach( div =>{
         div.style.boxShadow = `0px 0px 15px ${current_user().color}`
     })
+
+    user_indicator.style.color = current_user().text_color+"70"
 }
 function update_weekrows_editors_selectors(){
     let list_of_tags = cloneobj(current_user().tags)
@@ -269,8 +311,6 @@ function get_tag(id){
         return {name:"",color:"#ffffff",text_color:"#000000",id:""}
     }
 }
-
-
 function update_week_rows_display(){
     week_display_body.innerHTML = 
     `
@@ -297,7 +337,7 @@ function update_week_rows_display(){
     current_user().week_schedule.forEach( week_row =>{
         week_display_body.innerHTML += 
         `
-        <div class="week-display-holder-row text-center d-flex">
+        <div class="week-display-holder-row div-to-change-backgroundcolor-to-color text-center d-flex">
         <div class="week-display-header-row-time">
             <div class="week-display-header-row-hours div-to-change-backgroundcolor span-to-change-color-ghost">
             ${week_row.time}
@@ -384,6 +424,7 @@ function update_week_rows_display(){
 
 }
 
+
 function update_users(){
     const select_to_delete_users = document.getElementById("select-delete-user")
 
@@ -434,8 +475,6 @@ function open_tag_on_another_tab(user_id,tag_id){
     window.open(`../html/tag.html#${user_id}-${tag_id}`,'_blank')
 }
 
-// socket.emit('deleteRow',id)
-
 socket.on('update_data_users', users_list => {
     users = cloneobj(users_list)
     update_users()
@@ -452,6 +491,7 @@ socket.on('update_data_users', users_list => {
             update_colors_contrast_class()
             update_users()
             update_color_inputs()
+            user_indicator.innerText = current_user().name
         }
     },500)
 })

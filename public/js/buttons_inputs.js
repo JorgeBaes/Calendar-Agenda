@@ -23,6 +23,9 @@ const display_event_title = document.getElementById("display-event-title")
 const input_note_name = document.getElementById("input-note-name")
 const input_note_text = document.getElementById("input-note-textarea")
 
+//EDIT NOTES
+const input_editor_note_name = document.getElementById("input-editor-note-name")
+const input_editor_note_text = document.getElementById("input-editor-note-textarea")
 
 //CREATE TAG
 const input_tag_name = document.getElementById("input-tag-name")
@@ -120,3 +123,10 @@ const tag_text_color_input = document.getElementById("tag-text-color-input")
 ///TASK DISPLAY
 const tasks_display_body = document.getElementById("tasks-display-body")
 
+
+//USER INDICATOR
+const user_indicator = document.getElementById("user-indicator")
+
+
+//EDIT TAG
+const input_editor_tag_name = document.getElementById("input-editor-tag-name")

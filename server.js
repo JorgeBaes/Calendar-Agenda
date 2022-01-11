@@ -345,6 +345,23 @@ io.sockets.on('connection', function (socket) {
         }
         io.emit('update_data_users', value("users"))
     })
+    socket.on('edit_tag', ({tag,new_tag})=>{
+        let array = db
+        .get("users")
+        .value();
+        
+        let index_id = array.findIndex((el) => el.id == tag.user_id)
+
+        if(index_id != -1){
+            const tag_index = array[index_id].tags.findIndex(el => el.id == tag.id)
+            array[index_id].tags[tag_index].name = new_tag.name
+
+            db.get("users")
+            .assign(array) 
+            .write();
+        }
+        io.emit('update_data_users', value("users"))
+    })
 
     socket.on('create_task', ({user_id,tag_id,name,date,text}) => {
         const new_task = {

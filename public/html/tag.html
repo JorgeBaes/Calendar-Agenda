@@ -16,7 +16,11 @@
     <link rel="stylesheet" href="../css/modals.css">
     <link rel="stylesheet" href="../css/svg.css">
 </head>
-<body>
+<body class="disable-select">
+
+   <div style="position: fixed; bottom: 5px; left: 5px;" id="user-indicator">
+      <!-- <span id="user-indicator"></span> -->
+  </div>
 
    <input type="color" oninput="tag_color_oninput()" onchange="tag_color_onchange()" name="" class="color-input tag-color-input" id="tag-color-input">
    <input type="color" oninput="tag_color_oninput()" onchange="tag_color_onchange()" name="" class="color-input tag-color-input" id="tag-text-color-input">
@@ -24,6 +28,7 @@
    
 
    <div class="tasks-display-body" id="tasks-display-body">
+      
       <div class="tasks-display-holder-title text-center d-flex">
           <div class="tasks-display-title">Tasks</div>
       </div>
@@ -93,7 +98,30 @@
             </div>
          </div>
    </div>
-   </div>  
+   </div>     
+   <div class="modal fade" id="modal-edit-tag">
+   <div class="modal-dialog">
+         <div class="modal-content">
+            <div style="position: absolute; top: 5px; right: 5px;">
+               <button id="btn-close-edit-tag" type="button" class="btn btn-danger btn-lg" data-dismiss="modal-mensagem" onclick="">X</button>
+            </div>
+            <div class="modal-header edit-tag-header">
+               <h4 class="modal-title">Tag editor</h4>
+            </div>
+            <div class="modal-body edit-tag-body">                        
+               <div class="col-md-12">
+                     <div class="col-md-12 create-tag-inner-div">
+                        <input type="text" name="" id="input-editor-tag-name" placeholder="Tag name" >
+                     </div>  
+                                            
+                     <div class="col-md-12 create-tag-inner-div">
+                        <button class="btn btn-success btn-lg" onclick="request_tag_edit()">Edit</button>
+                     </div>
+               </div>                        
+            </div>
+         </div>
+   </div>
+   </div> 
 
    <script src="../libs/socket.io.dev.js"></script>
    <script src="../libs/calendar_lib_min.js"></script>

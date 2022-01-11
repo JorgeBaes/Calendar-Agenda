@@ -51,3 +51,8 @@ const svg_home =
 	</g>
 </g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg>
 `
+
+const png_star = 
+`
+<img src="../images/star.png" style="margin-bottom:10px" width="25px" alt="" srcset="">
+`

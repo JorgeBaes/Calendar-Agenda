@@ -56,3 +56,10 @@ function get_time(date){
     return d.getTime()
 
 }
+
+function diff_dates(dateOne, dateTwo) {
+    if (typeof dateTwo === 'undefined') {
+        dateTwo = new Date();
+    }
+    return Math.ceil((dateOne.getTime() - dateTwo.getTime()) / (1000 * 60 * 60 * 24))
+}

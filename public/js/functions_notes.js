@@ -51,7 +51,34 @@ function delete_note(note){
  /////
  ////EDIT
  /////
-
+ let current_note_id_editing = ""
+ function open_edit_note(note_id){
+     current_note_id_editing = note_id
+ 
+     $(`#modal-edit-note`).modal('show') 
+     $(`#modal-display-note`).modal('toggle') 
+     const evt_index = current_user().notes.findIndex( el => el.id == note_id)
+     const note_to_be_edited = current_user().notes[evt_index]
+ 
+     input_editor_note_name.value = note_to_be_edited.name
+     input_editor_note_text.value = note_to_be_edited.text
+ }
+ 
+ function request_note_edit(){
+     const evt_index = current_user().notes.findIndex( el => el.id == current_note_id_editing)
+     if(evt_index != -1){
+         const note_to_be_edited = current_user().notes[evt_index]
+         const edited_note = {
+             user_id: current_user_id, 
+             id:note_to_be_edited.id,
+             name:input_editor_note_name.value,
+             text:input_editor_note_text.value
+          }
+         edit_note(note_to_be_edited,edited_note)
+         $(`#modal-edit-note`).modal('toggle') 
+     }
+ }
+ 
 
  function edit_note(note, new_note){
    socket.emit('edit_note', {note,new_note})

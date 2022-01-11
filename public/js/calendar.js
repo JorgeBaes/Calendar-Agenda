@@ -66,8 +66,10 @@ function update_calendar_display(){
    </div> 
    `
    const calendar_array = get_calendar(month_counter,year_counter)
-   let counter = 0
 
+   const today_date = new Date()
+
+   let counter = 0
    let row_string = ""
 
    // console.log("fix",fixed_calendar)
@@ -98,7 +100,7 @@ function update_calendar_display(){
       })
       row_string +=
       `
-      <div class="calendar-display-header-row-day">
+      <div class="calendar-display-header-row-day ${days_have_the_same_year_month_day(today_date,calendar_date)?"calendar-display-header-row-day-today":""}">
             <div class="calendar-display-day-title-holder">
                <div class="calendar-display-day-title-div">${calendar_array[i].day}</div>
             </div>
@@ -141,7 +143,7 @@ function update_calendar_display(){
 
       row_string +=
       `
-      <div class="calendar-display-header-row-day">
+      <div class="calendar-display-header-row-day ${days_have_the_same_year_month_day(today_date,calendar_date)?"calendar-display-header-row-day-today":""}">
             <div class="calendar-display-day-title-holder">
                <div class="calendar-display-day-title-div">${calendar_day.day}</div>
             </div>
@@ -165,6 +167,8 @@ function update_calendar_display(){
    
    calendar_month_year_display_span_title.innerText = 
    `${months[month_counter]} de ${year_counter}`
+
+   update_colors_contrast_class()
   
 }
 

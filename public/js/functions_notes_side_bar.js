@@ -9,11 +9,11 @@ function open_note_display(){
 function close_note_display(){
    note_display.style.bottom = "-50vh"
    note_display.style.boxShadow = "0px 0px 0px #000000"
-   note_display.style.transitionDuration = "2400ms"
+   note_display.style.transitionDuration = "1200ms"
 
    setTimeout(()=>{
       note_open_display_button.style.opacity = "1"
       note_open_display_button.style.pointerEvents = "all"
-      note_open_display_button.style.transitionDuration = "1300ms"
-   },1500)
+      note_open_display_button.style.transitionDuration = "500ms"
+   },500)
 }

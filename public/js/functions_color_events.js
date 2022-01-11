@@ -51,6 +51,11 @@ function user_color_oninput(){
         div.style.transition = "400ms"
     })
 
+    const list_of_div_to_change_background_to_color = [...document.getElementsByClassName("div-to-change-backgroundcolor-to-color")]
+    list_of_div_to_change_background_to_color.forEach( div =>{
+        div.style.background = user_color_input.value+"60"
+    })
+
     
 }
 

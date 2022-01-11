@@ -48,6 +48,22 @@ body{
     animation: svg-animate-first 600ms;
 }
 
+#user-indicator{
+    font-size: 1.5rem;
+    line-height: -1.4rem;
+    font-weight:100;
+    font-family: monospace;
+    transition: 1500ms;
+    transition-timing-function: ease-in-out;
+    transform: scale(1);
+}
+
+#user-indicator:hover{
+    cursor: grabbing;
+    transform: scale(1.1);
+    transition: 500ms;
+}
+
 
 
 @keyframes svg-animate-first{

@@ -1,6 +1,6 @@
 
 const modals_ids = 
-["create-user","create-tag","create-task","edit-task","display-task","create-event","display-event","create-note","edit-event","create-weekrow","editor-weekrow"]
+["create-user","create-tag","edit-tag","create-task","edit-task","display-task","create-event","display-event","create-note","edit-note","edit-event","create-weekrow","editor-weekrow","display-tutorial"]
 /*
 COLOCAR OS IDS NO "modal" "button" e "close button"
 */
@@ -20,3 +20,19 @@ $(document).ready(function() {
         })
     })
 })
+
+
+window.addEventListener('keydown', ({key}) => { 
+    console.log(key)   
+    if (key === 'Escape'){
+        modals_ids.forEach( el =>{  
+            $(`#modal-${el}`).modal('hide')
+        })
+        close_note_display()
+    }    
+})
+
+
+function open_tutorial(){    
+    $(`#modal-display-tutorial`).modal('show')
+}

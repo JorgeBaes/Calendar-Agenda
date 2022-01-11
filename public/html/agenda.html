@@ -25,10 +25,9 @@
 
     <body class="disable-select"> 
         
+        <button class="btn btn-md btn-light" onclick="open_tutorial()" style="position: fixed; bottom: 5px; left: 5px; box-shadow: 0px 0px 3px #000000;">Tutorial</button>
 
         <div class="home-div" id="home-div">
-
-            
             <div class="col-md-12">     
                 <div class="col-md-12 text-center" style="margin-top: 5vh;">
                     <h1 style="font-size: 5rem; color: #ffffea; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Agenda</h1>
@@ -39,13 +38,14 @@
                 <div class="col-md-12 text-center" style="margin-top: 6vh; margin-bottom: 30vh;">
                     <!-- <button class="btn btn-success btn-lg" id="btn-create-user">Create User</button>  -->
                     <span onclick="open_user_creator()">
-                    <svg class="svg-animate pointer" fill="#ffffea" width="150px" height="150px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Layer_1" style="enable-background:new 0 0 64 64;" version="1.1" viewBox="0 0 64 64" xml:space="preserve">
-                        <g><g id="Icon-Plus" transform="translate(28.000000, 278.000000)"><path  d="M4-222.1c-13.2,0-23.9-10.7-23.9-23.9c0-13.2,10.7-23.9,23.9-23.9s23.9,10.7,23.9,23.9     C27.9-232.8,17.2-222.1,4-222.1L4-222.1z M4-267.3c-11.7,0-21.3,9.6-21.3,21.3s9.6,21.3,21.3,21.3s21.3-9.6,21.3-21.3     S15.7-267.3,4-267.3L4-267.3z" id="Fill-38"/><polygon  id="Fill-39" points="-8.7,-247.4 16.7,-247.4 16.7,-244.6 -8.7,-244.6    "/><polygon id="Fill-40" points="2.6,-258.7 5.4,-258.7 5.4,-233.3 2.6,-233.3    "/></g></g></svg>    </span></div> 
-                    </span>
+                        <svg class="svg-animate pointer" fill="#ffffea" width="150px" height="150px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Layer_1" style="enable-background:new 0 0 64 64;" version="1.1" viewBox="0 0 64 64" xml:space="preserve">
+                            <g><g id="Icon-Plus" transform="translate(28.000000, 278.000000)"><path  d="M4-222.1c-13.2,0-23.9-10.7-23.9-23.9c0-13.2,10.7-23.9,23.9-23.9s23.9,10.7,23.9,23.9     C27.9-232.8,17.2-222.1,4-222.1L4-222.1z M4-267.3c-11.7,0-21.3,9.6-21.3,21.3s9.6,21.3,21.3,21.3s21.3-9.6,21.3-21.3     S15.7-267.3,4-267.3L4-267.3z" id="Fill-38"/><polygon  id="Fill-39" points="-8.7,-247.4 16.7,-247.4 16.7,-244.6 -8.7,-244.6    "/><polygon id="Fill-40" points="2.6,-258.7 5.4,-258.7 5.4,-233.3 2.6,-233.3    "/></g></g></svg>    </span></div> 
+                        </span>
+                    </div>
                 </div>
-            </div>
         </div>
 
+        
 
         <div class="user-div" id="user-div">
             <div style="position: fixed; top: 5px ; left: 5px;">
@@ -61,6 +61,9 @@
                     </g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
                     </svg>                
                 </span>
+                <div id="user-indicator" onclick="go_to_home()">
+                    <!-- <span id="user-indicator"></span> -->
+                </div>
             </div>
             <input type="color" oninput="user_color_oninput()" onchange="user_color_onchange()" name="" class="color-input user-color-input" id="user-color-input">
             <input type="color" oninput="user_color_oninput()" onchange="user_color_onchange()" name="" class="color-input user-color-input" id="user-text-color-input">
@@ -681,7 +684,32 @@
                     </div>
                 </div>
             </div>
-        </div>        
+        </div>  
+        <div class="modal fade" id="modal-edit-note">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div style="position: absolute; top: 5px; right: 5px;">
+                        <button id="btn-close-edit-note" type="button" class="btn btn-danger btn-lg" data-dismiss="modal-mensagem" onclick="">X</button>
+                    </div>
+                    <div class="modal-header create-note-header">
+                        <h4 class="modal-title">Note editor</h4>
+                    </div>
+                    <div class="modal-body create-note-body">                        
+                        <div class="col-md-12">
+                            <div class="col-md-12 create-note-inner-div">
+                                <input type="text" name="" id="input-editor-note-name" placeholder="note">
+                            </div>    
+                            <div class="col-md-12 create-note-inner-div">
+                                <textarea name="" id="input-editor-note-textarea" cols="30" rows="7"></textarea>    
+                            </div> 
+                            <div class="col-md-12 create-note-inner-div">
+                                <button class="btn btn-success btn-lg" onclick="request_note_edit()">Edit</button>
+                            </div>
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+        </div>       
         <div class="modal fade" id="modal-create-weekrow">
             <div class="modal-dialog">
                 <div class="modal-content" id="create-weekrow-modal-content" style="width: 90vw; position: fixed; top: 5vh; left:5vw;">
@@ -894,7 +922,34 @@
             </div>
         </div>
 
-        
+        <div class="modal fade enable-select" id="modal-display-tutorial">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div style="position: absolute; top: 5px; right: 5px;">
+                        <button id="btn-close-display-tutorial" type="button" class="btn btn-danger btn-lg" data-dismiss="modal-mensagem" onclick="">X</button>
+                    </div>
+                    <div class="modal-header display-tutorial-header" style="color: rgb(2, 38, 116);" id="display-tutorial-header">
+                        <h4 id="display-tutorial-title" class="modal-title" id="tag-title-to-display-tutorial" style="overflow: hidden;">
+                            Tutorial
+                        </h4>
+                    </div> 
+                    <div class="modal-header display-tutorial-header text-center" style="color: crimson;" id="display-tutorial-header">
+                                    
+                    <h4>
+                            Calendar Agenda <br>-<br>
+                            An aplication to schedule events and organize your daily rotine
+                    </h4>
+                    </div>
+                    <div class="modal-body display-tutorial-body" id="display-tutorial-body">   
+                    </div>
+                    <div class="modal-body display-tutorial-footer" id="display-tutorial-footer">
+                        <div class="col-md-12 d-md-inline-flex">
+                            
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+        </div> 
 
         <script src="../libs/socket.io.dev.js"></script>
         <script src="../libs/calendar_lib_min.js"></script>

@@ -1,6 +1,379 @@
 {
   "users": [
-    
+    {
+      "id": "1571917629",
+      "name": "Luana",
+      "color": "#dbfaff",
+      "text_color": "#1e0057",
+      "tags": [
+        {
+          "id": "1238114654",
+          "user_id": "1571917629",
+          "name": "Física 4",
+          "color": "#b3ecff",
+          "text_color": "#330505",
+          "tasks": [
+            {
+              "id": "2834148637",
+              "user_id": "1571917629",
+              "tag_id": "1238114654",
+              "name": "A",
+              "date": "2022-01-19T00:00:00.000Z",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "id": "1963438610",
+          "user_id": "1571917629",
+          "name": "Termodinâmica sólidos",
+          "color": "#d1ffd4",
+          "text_color": "#0a5200",
+          "tasks": []
+        },
+        {
+          "id": "1063345727",
+          "user_id": "1571917629",
+          "name": "Mecânica Aplicada",
+          "color": "#fdff9e",
+          "text_color": "#000000",
+          "tasks": []
+        },
+        {
+          "id": "1886797852",
+          "user_id": "1571917629",
+          "name": "Séries e Eq Diferenciais",
+          "color": "#fec7a9",
+          "text_color": "#420000",
+          "tasks": [
+            {
+              "id": "7867173157",
+              "user_id": "1571917629",
+              "tag_id": "1886797852",
+              "name": "Tarefa",
+              "date": "2022-01-15T00:00:00.000Z",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "id": "7332928249",
+          "user_id": "1571917629",
+          "name": "Ciência dos Materiais 2",
+          "color": "#ffd1fd",
+          "text_color": "#4c0052",
+          "tasks": []
+        },
+        {
+          "id": "0722503898",
+          "user_id": "1571917629",
+          "name": "Fenômenos Transporte",
+          "color": "#ffd1df",
+          "text_color": "#000000",
+          "tasks": []
+        },
+        {
+          "id": "1143998629",
+          "user_id": "1571917629",
+          "name": "Iniciação Científica",
+          "color": "#00094d",
+          "text_color": "#cdcdfe",
+          "tasks": [
+            {
+              "id": "4263903124",
+              "user_id": "1571917629",
+              "tag_id": "1143998629",
+              "name": "Ic",
+              "date": "2022-01-18T00:00:00.000Z",
+              "text": ""
+            }
+          ]
+        }
+      ],
+      "events": [
+        {
+          "user_id": "1571917629",
+          "id": "6247599677",
+          "name": "Oculista",
+          "date": "2022-01-12T00:00:00.000Z",
+          "text": "8:30 centro médico 51"
+        },
+        {
+          "user_id": "1571917629",
+          "id": "1539344627",
+          "name": "Prova de Habilitação",
+          "date": "2022-01-13T00:00:00.000Z",
+          "text": ""
+        }
+      ],
+      "week_schedule": [
+        {
+          "seg": {
+            "tag": "1238114654",
+            "name": "Filippo",
+            "text_color": "#000000",
+            "color": "#ffffff"
+          },
+          "ter": {
+            "tag": "",
+            "name": "",
+            "text_color": "#000000",
+            "color": "#ffffff"
+          },
+          "qua": {
+            "tag": "",
+            "name": "",
+            "text_color": "#000000",
+            "color": "#ffffff"
+          },
+          "qui": {
+            "tag": "1886797852",
+            "name": "Alex",
+            "text_color": "#000000",
+            "color": "#ffffff"
+          },
+          "sex": {
+            "tag": "",
+            "name": "",
+            "text_color": "#000000",
+            "color": "#ffffff"
+          },
+          "sab": {
+            "tag": "",
+            "name": "",
+            "text_color": "#000000",
+            "color": "#ffffff"
+          },
+          "dom": {
+            "tag": "",
+            "name": "",
+            "text_color": "#000000",
+            "color": "#ffffff"
+          },
+          "user_id": "1571917629",
+          "id": "5196816193",
+          "time": "08:00"
+        },
+        {
+          "seg": {
+            "tag": "",
+            "name": "",
+            "text_color": "#000000",
+            "color": "#ffffff"
+          },
+          "ter": {
+            "tag": "1886797852",
+            "name": "Alex",
+            "text_color": "#000000",
+            "color": "#ffffff"
+          },
+          "qua": {
+            "tag": "1238114654",
+            "name": "Filippo",
+            "text_color": "#000000",
+            "color": "#ffffff"
+          },
+          "qui": {
+            "tag": "1963438610",
+            "name": "Andreeta",
+            "text_color": "#000000",
+            "color": "#ffffff"
+          },
+          "sex": {
+            "tag": "",
+            "name": "",
+            "text_color": "#000000",
+            "color": "#ffffff"
+          },
+          "sab": {
+            "tag": "",
+            "name": "",
+            "text_color": "#000000",
+            "color": "#ffffff"
+          },
+          "dom": {
+            "tag": "",
+            "name": "",
+            "text_color": "#000000",
+            "color": "#ffffff"
+          },
+          "user_id": "1571917629",
+          "id": "1082946525",
+          "time": "10:00"
+        },
+        {
+          "seg": {
+            "tag": "",
+            "name": "",
+            "text_color": "#000000",
+            "color": "#ffffff"
+          },
+          "ter": {
+            "tag": "",
+            "name": "",
+            "text_color": "#000000",
+            "color": "#ffffff"
+          },
+          "qua": {
+            "tag": "1143998629",
+            "name": "Reunião",
+            "text_color": "#000000",
+            "color": "#ffffff"
+          },
+          "qui": {
+            "tag": "",
+            "name": "",
+            "text_color": "#000000",
+            "color": "#ffffff"
+          },
+          "sex": {
+            "tag": "",
+            "name": "",
+            "text_color": "#000000",
+            "color": "#ffffff"
+          },
+          "sab": {
+            "tag": "",
+            "name": "",
+            "text_color": "#000000",
+            "color": "#ffffff"
+          },
+          "dom": {
+            "tag": "",
+            "name": "",
+            "text_color": "#000000",
+            "color": "#ffffff"
+          },
+          "user_id": "1571917629",
+          "id": "3473475157",
+          "time": "13:30"
+        },
+        {
+          "seg": {
+            "tag": "",
+            "name": "",
+            "text_color": "#000000",
+            "color": "#ffffff"
+          },
+          "ter": {
+            "tag": "0722503898",
+            "name": "Janaina",
+            "text_color": "#000000",
+            "color": "#ffffff"
+          },
+          "qua": {
+            "tag": "7332928249",
+            "name": "Zepones",
+            "text_color": "#000000",
+            "color": "#ffffff"
+          },
+          "qui": {
+            "tag": "1963438610",
+            "name": "Andreeta",
+            "text_color": "#000000",
+            "color": "#ffffff"
+          },
+          "sex": {
+            "tag": "",
+            "name": "",
+            "text_color": "#000000",
+            "color": "#ffffff"
+          },
+          "sab": {
+            "tag": "",
+            "name": "",
+            "text_color": "#000000",
+            "color": "#ffffff"
+          },
+          "dom": {
+            "tag": "",
+            "name": "",
+            "text_color": "#000000",
+            "color": "#ffffff"
+          },
+          "user_id": "1571917629",
+          "time": "14:00",
+          "id": "2465971623"
+        },
+        {
+          "seg": {
+            "tag": "",
+            "name": "",
+            "text_color": "#000000",
+            "color": "#ffffff"
+          },
+          "ter": {
+            "tag": "0722503898",
+            "name": "Janaina",
+            "text_color": "#000000",
+            "color": "#ffffff"
+          },
+          "qua": {
+            "tag": "7332928249",
+            "name": "Zepones",
+            "text_color": "#000000",
+            "color": "#ffffff"
+          },
+          "qui": {
+            "tag": "1063345727",
+            "name": "Wanderson",
+            "text_color": "#000000",
+            "color": "#ffffff"
+          },
+          "sex": {
+            "tag": "",
+            "name": "",
+            "text_color": "#000000",
+            "color": "#ffffff"
+          },
+          "sab": {
+            "tag": "",
+            "name": "",
+            "text_color": "#000000",
+            "color": "#ffffff"
+          },
+          "dom": {
+            "tag": "",
+            "name": "",
+            "text_color": "#000000",
+            "color": "#ffffff"
+          },
+          "user_id": "1571917629",
+          "time": "16:00",
+          "id": "7361064976"
+        }
+      ],
+      "notes": [
+        {
+          "user_id": "1571917629",
+          "id": "0589181747",
+          "name": "Comprar brócolis",
+          "text": "Não posso esquecer de comprar brócolis pra fazer com o churrasco. brócoli é bão!"
+        },
+        {
+          "user_id": "1571917629",
+          "id": "5434502202",
+          "name": "Indicação de Livro",
+          "text": "Na aula de hoje o prof falou do livro Lobo da Estepe. Queru ler!! Sepá é o nome de uma música também 🤔"
+        },
+        {
+          "id": "3926059879",
+          "user_id": "1571917629",
+          "name": "Indicação de Mangá",
+          "text": "Minha miga disse do mangá Tokyo Revengers. Parece ser muito bom, ela disse de uns lance de viagem no tempo"
+        }
+      ]
+    },
+    {
+      "id": "5011069155",
+      "name": "Jorge",
+      "color": "#fee1fa",
+      "text_color": "#3d0012",
+      "tags": [],
+      "events": [],
+      "week_schedule": [],
+      "notes": []
+    }
   ],
-  "state": "home"
+  "state": "5011069155"
 }

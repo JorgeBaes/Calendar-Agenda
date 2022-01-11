@@ -1,3 +1,17 @@
+.disable-select {
+   user-select: none; /* supported by Chrome and Opera */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+}
+.enable-select {
+   user-select: text; /* supported by Chrome and Opera */
+  -webkit-user-select: text; /* Safari */
+  -khtml-user-select: text; /* Konqueror HTML */
+  -moz-user-select: text; /* Firefox */
+  -ms-user-select: text; /* Internet Explorer/Edge */
+}
 .pointer{
    cursor: pointer;
 }
@@ -5,18 +19,13 @@
 .tasks-display-body{
    width: 60%;
    margin: 5% auto 30vh auto;
-   background-color:rgb(103, 0, 221) ;
    transition: 3s;
 }
 .tasks-display-holder{
    width: 100%;
    font-size: 2.5rem;
    padding: 3px;
-   background-color: rgba(117, 117, 117, 0.65);
    transition: 500ms;
-}
-.tasks-display-holder:hover{
-   background-color: rgba(189, 189, 189, 0.644);
 }
 .tasks-display-holder-title{
    width: 100%;
@@ -29,7 +38,7 @@
 
 .tasks-display-title{
    width: 100%;
-   margin-left: 13%;
+   margin-left: 5%;
 }
 
 
@@ -113,4 +122,14 @@
 .color-input::-webkit-color-swatch {    
    border: none;
    border-radius: 100%;
+}
+
+#user-indicator{
+   font-size: 1.5rem;
+   line-height: -1.4rem;
+   font-weight:100;
+   font-family: monospace;
+   transition: 1500ms;
+   transition-timing-function: ease-in-out;
+   transform: scale(1);
 }
