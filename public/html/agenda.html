@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="app_title">Agenda</title>
+    <link href="../images/shortcut_icon.ico" type="image/png" rel="shortcut icon">
+
+    <link rel="stylesheet" href="../libs/bootstrap.min.css">
+    <script src="../libs/jQuery.js"></script>
+    <script src="../libs/bootstrap.min.js"></script>
+    <script src="../libs/bootstrap.bundle.min.js"></script>
+
+    <link href="../css/main.css" rel="stylesheet">
+    <link href="../css/modals.css" rel="stylesheet">
+    <link href="../css/home.css" rel="stylesheet">
+    <link href="../css/tags_display.css" rel="stylesheet">
+    <link href="../css/events_display.css" rel="stylesheet">
+    <link href="../css/week_display.css" rel="stylesheet">
+    <link href="../css/calendar_display.css" rel="stylesheet">
+    <link href="../css/notes_display.css" rel="stylesheet">
+    <link href="../css/svg.css" rel="stylesheet">
+    <meta name="viewport"content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    </head>
+
+    <body class="disable-select"> 
+        
+
+        <div class="home-div" id="home-div">
+
+            
+            <div class="col-md-12">     
+                <div class="col-md-12 text-center" style="margin-top: 5vh;">
+                    <h1 style="font-size: 5rem; color: #ffffea; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Agenda</h1>
+                </div>           
+                <div class="wrap-users-display col-md-12 text-center" id="wrap-users-display">
+                    
+                </div>
+                <div class="col-md-12 text-center" style="margin-top: 6vh; margin-bottom: 30vh;">
+                    <!-- <button class="btn btn-success btn-lg" id="btn-create-user">Create User</button>  -->
+                    <span onclick="open_user_creator()">
+                    <svg class="svg-animate pointer" fill="#ffffea" width="150px" height="150px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Layer_1" style="enable-background:new 0 0 64 64;" version="1.1" viewBox="0 0 64 64" xml:space="preserve">
+                        <g><g id="Icon-Plus" transform="translate(28.000000, 278.000000)"><path  d="M4-222.1c-13.2,0-23.9-10.7-23.9-23.9c0-13.2,10.7-23.9,23.9-23.9s23.9,10.7,23.9,23.9     C27.9-232.8,17.2-222.1,4-222.1L4-222.1z M4-267.3c-11.7,0-21.3,9.6-21.3,21.3s9.6,21.3,21.3,21.3s21.3-9.6,21.3-21.3     S15.7-267.3,4-267.3L4-267.3z" id="Fill-38"/><polygon  id="Fill-39" points="-8.7,-247.4 16.7,-247.4 16.7,-244.6 -8.7,-244.6    "/><polygon id="Fill-40" points="2.6,-258.7 5.4,-258.7 5.4,-233.3 2.6,-233.3    "/></g></g></svg>    </span></div> 
+                    </span>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="user-div" id="user-div">
+            <div style="position: fixed; top: 5px ; left: 5px;">
+                <span onclick="go_to_home()">
+                    <svg  class="svg-animate svg-home pointer svg-to-change-color-ghost" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="40px" height="40px" viewBox="0 0 495.398 495.398" style="enable-background:new 0 0 495.398 495.398;" xml:space="preserve">
+                        <g>
+                            <g>
+                                <g>
+                                    <path d="M487.083,225.514l-75.08-75.08V63.704c0-15.682-12.708-28.391-28.413-28.391c-15.669,0-28.377,12.709-28.377,28.391     v29.941L299.31,37.74c-27.639-27.624-75.694-27.575-103.27,0.05L8.312,225.514c-11.082,11.104-11.082,29.071,0,40.158     c11.087,11.101,29.089,11.101,40.172,0l187.71-187.729c6.115-6.083,16.893-6.083,22.976-0.018l187.742,187.747     c5.567,5.551,12.825,8.312,20.081,8.312c7.271,0,14.541-2.764,20.091-8.312C498.17,254.586,498.17,236.619,487.083,225.514z"/>
+                                    <path d="M257.561,131.836c-5.454-5.451-14.285-5.451-19.723,0L72.712,296.913c-2.607,2.606-4.085,6.164-4.085,9.877v120.401     c0,28.253,22.908,51.16,51.16,51.16h81.754v-126.61h92.299v126.61h81.755c28.251,0,51.159-22.907,51.159-51.159V306.79     c0-3.713-1.465-7.271-4.085-9.877L257.561,131.836z"/>
+                                </g>
+                            </g>
+                    </g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
+                    </svg>                
+                </span>
+            </div>
+            <input type="color" oninput="user_color_oninput()" onchange="user_color_onchange()" name="" class="color-input user-color-input" id="user-color-input">
+            <input type="color" oninput="user_color_oninput()" onchange="user_color_onchange()" name="" class="color-input user-color-input" id="user-text-color-input">
+            <!-- LEFT SIDE BAR -->
+            
+            <!-- LEFT SIDE BAR -->
+            
+            <!-- RIGHT SIDE BAR -->
+            <!-- <div id="side-note-open-bar" onclick="open_note_display()">
+                N o t e
+            </div> -->
+            
+            <!-- <div class="side-tag-holder-body" id="side-tag-holder-tbody">                
+            </div>   -->
+            <!-- RIGHT SIDE BAR -->
+            <div class="week-display">
+                <div class="week-display-body div-to-change-backgroundcolor div-to-change-box-shadow" id="week-display-body">
+                    <div class="week-display-holder-title text-center d-flex">
+                        <div class="week-display-header-time">
+                            <span onclick="open_create_weekrow()">
+                                <svg class="svg-animate pointer" width="4rem" height="4rem" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" id="Layer_1" style="enable-background:new 0 0 64 64;" version="1.1" viewBox="0 0 64 64" xml:space="preserve">
+                                <g><g id="Icon-Plus" transform="translate(28.000000, 278.000000)"><path style="fill:#FFFFFF;" d="M4-222.1c-13.2,0-23.9-10.7-23.9-23.9c0-13.2,10.7-23.9,23.9-23.9s23.9,10.7,23.9,23.9     C27.9-232.8,17.2-222.1,4-222.1L4-222.1z M4-267.3c-11.7,0-21.3,9.6-21.3,21.3s9.6,21.3,21.3,21.3s21.3-9.6,21.3-21.3     S15.7-267.3,4-267.3L4-267.3z" id="Fill-38"/><polygon style="fill:#c7c7c7;" id="Fill-39" points="-8.7,-247.4 16.7,-247.4 16.7,-244.6 -8.7,-244.6    "/><polygon style="fill:#c7c7c7;" id="Fill-40" points="2.6,-258.7 5.4,-258.7 5.4,-233.3 2.6,-233.3    "/></g></g></svg>    
+                            </span> 
+                                
+                        </div>    
+                        <div class="week-display-header-day">Seg</div> 
+                        <div class="week-display-header-day">Ter</div> 
+                        <div class="week-display-header-day">Qua</div> 
+                        <div class="week-display-header-day">Qui</div> 
+                        <div class="week-display-header-day">Sex</div>  
+                        <div class="week-display-header-day">Sab</div>
+                        <div class="week-display-header-day">Dom</div>                      
+                    </div>   
+                    
+                    <div class="week-display-holder-row text-center d-flex">
+                        <div class="week-display-header-row-time">
+                            <div class="week-display-header-row-hours">00:00</div>
+                            <div class="week-display-header-row-edit-button">
+                                <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#afafaf" class="pointer edit-row-button" height="20px" width="20px" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 477.873 477.873" style="enable-background:new 0 0 477.873 477.873; margin-right:-7px" xml:space="preserve">
+                                        <title>Editar</title>
+                                        <g>
+                                            <g>
+                                                <path d="M392.533,238.937c-9.426,0-17.067,7.641-17.067,17.067V426.67c0,9.426-7.641,17.067-17.067,17.067H51.2    c-9.426,0-17.067-7.641-17.067-17.067V85.337c0-9.426,7.641-17.067,17.067-17.067H256c9.426,0,17.067-7.641,17.067-17.067    S265.426,34.137,256,34.137H51.2C22.923,34.137,0,57.06,0,85.337V426.67c0,28.277,22.923,51.2,51.2,51.2h307.2    c28.277,0,51.2-22.923,51.2-51.2V256.003C409.6,246.578,401.959,238.937,392.533,238.937z"/>
+                                            </g>
+                                        </g>
+                                        <g>
+                                            <g>
+                                                <path d="M458.742,19.142c-12.254-12.256-28.875-19.14-46.206-19.138c-17.341-0.05-33.979,6.846-46.199,19.149L141.534,243.937    c-1.865,1.879-3.272,4.163-4.113,6.673l-34.133,102.4c-2.979,8.943,1.856,18.607,10.799,21.585    c1.735,0.578,3.552,0.873,5.38,0.875c1.832-0.003,3.653-0.297,5.393-0.87l102.4-34.133c2.515-0.84,4.8-2.254,6.673-4.13    l224.802-224.802C484.25,86.023,484.253,44.657,458.742,19.142z"/>
+                                            </g>
+                                        </g><g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
+                                    </svg>
+
+                                </span>
+                            </div>
+                        </div>    
+                        <div class="week-display-header-row-day">
+                            <div class="week-display-name-holder">
+                                Name
+                            </div>
+                            <div class="week-display-tag-holder">
+                                Tag
+                            </div>
+                        </div> 
+                        <div class="week-display-header-row-day">
+                            <div class="week-display-name-holder">
+                                Name
+                            </div>
+                            <div class="week-display-tag-holder">
+                                Tag
+                            </div>
+                        </div> 
+                        <div class="week-display-header-row-day">
+                            <div class="week-display-name-holder">
+                                Name
+                            </div>
+                            <div class="week-display-tag-holder">
+                                Tag
+                            </div>
+                        </div> 
+                        <div class="week-display-header-row-day">
+                            <div class="week-display-name-holder">
+                                Name
+                            </div>
+                            <div class="week-display-tag-holder">
+                                Tag
+                            </div>
+                        </div> 
+                        <div class="week-display-header-row-day">
+                            <div class="week-display-name-holder">
+                                Name
+                            </div>
+                            <div class="week-display-tag-holder">
+                                Tag
+                            </div>
+                        </div> 
+                        <div class="week-display-header-row-day">
+                            <div class="week-display-name-holder">
+                                Name
+                            </div>
+                            <div class="week-display-tag-holder">
+                                Tag
+                            </div>
+                        </div> 
+                        <div class="week-display-header-row-day">
+                            <div class="week-display-name-holder">
+                                Name
+                            </div>
+                            <div class="week-display-tag-holder">
+                                Tag
+                            </div>
+                        </div>     
+                    </div> 
+                    
+                </div>
+
+            </div>
+
+            <div class="calendar-display text-center">
+                <div class="calendar-month-year-display d-md-inline-flex">
+                    <div class="calendar-month-year-display-buttons">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="svg-animate pointer svg-to-change-color" onclick="backward_month()" width="45px" height="45px" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px"
+                        y="0px" viewBox="0 0 492 492" style="enable-background:new 0 0 492 492;" xml:space="preserve">
+                        <g>
+                            <g>
+                                <path
+                                    d="M464.344,207.418l0.768,0.168H135.888l103.496-103.724c5.068-5.064,7.848-11.924,7.848-19.124    c0-7.2-2.78-14.012-7.848-19.088L223.28,49.538c-5.064-5.064-11.812-7.864-19.008-7.864c-7.2,0-13.952,2.78-19.016,7.844    L7.844,226.914C2.76,231.998-0.02,238.77,0,245.974c-0.02,7.244,2.76,14.02,7.844,19.096l177.412,177.412    c5.064,5.06,11.812,7.844,19.016,7.844c7.196,0,13.944-2.788,19.008-7.844l16.104-16.112c5.068-5.056,7.848-11.808,7.848-19.008    c0-7.196-2.78-13.592-7.848-18.652L134.72,284.406h329.992c14.828,0,27.288-12.78,27.288-27.6v-22.788    C492,219.198,479.172,207.418,464.344,207.418z" />
+                            </g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
+                        </svg>
+                    </div>
+                    <div class="calendar-month-year-display-title">
+                        <span id="calendar-month-year-display-span-title" class="span-to-change-color"></span> 
+                    </div>
+                    <div class="calendar-month-year-display-buttons">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="svg-animate pointer svg-to-change-color" onclick="foward_month()"  width="45px" height="45px"  xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px"
+                            y="0px" viewBox="0 0 492.004 492.004" style="enable-background:new 0 0 492.004 492.004;" xml:space="preserve">
+                            <g>
+                                <g>
+                                    <path
+                                        d="M484.14,226.886L306.46,49.202c-5.072-5.072-11.832-7.856-19.04-7.856c-7.216,0-13.972,2.788-19.044,7.856l-16.132,16.136    c-5.068,5.064-7.86,11.828-7.86,19.04c0,7.208,2.792,14.2,7.86,19.264L355.9,207.526H26.58C11.732,207.526,0,219.15,0,234.002    v22.812c0,14.852,11.732,27.648,26.58,27.648h330.496L252.248,388.926c-5.068,5.072-7.86,11.652-7.86,18.864    c0,7.204,2.792,13.88,7.86,18.948l16.132,16.084c5.072,5.072,11.828,7.836,19.044,7.836c7.208,0,13.968-2.8,19.04-7.872    l177.68-177.68c5.084-5.088,7.88-11.88,7.86-19.1C492.02,238.762,489.228,231.966,484.14,226.886z" />
+                                </g>
+                            </g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
+                        </svg>  
+
+                    </div>
+                    
+                </div>
+                <div class="calendar-display-body" id="calendar-display-body">
+                    <div class="calendar-display-holder-title text-center d-flex">
+                        <div class="calendar-display-header-day">Seg</div> 
+                        <div class="calendar-display-header-day">Ter</div> 
+                        <div class="calendar-display-header-day">Qua</div> 
+                        <div class="calendar-display-header-day">Qui</div> 
+                        <div class="calendar-display-header-day">Sex</div>  
+                        <div class="calendar-display-header-day">Sab</div>
+                        <div class="calendar-display-header-day">Dom</div>                      
+                    </div>   
+                    
+                    <div class="calendar-display-holder-row text-center d-flex">    
+                        <div class="calendar-display-header-row-day">
+                            <div class="calendar-display-day-title-holder">
+                                <div class="calendar-display-day-title-div">1</div>
+                            </div>
+                            <div class="calendar-display-event-task-holder d-md-inline-flex">
+                                <div class="calendar-display-event-div"></div> 
+                                <div class="calendar-display-task-div"></div>                           
+                            </div>
+                        </div> 
+                        <div class="calendar-display-header-row-day">
+                            <div class="calendar-display-name-holder">
+                                Name
+                            </div>
+                            <div class="calendar-display-tag-holder">
+                                Tag
+                            </div>
+                        </div> 
+                        <div class="calendar-display-header-row-day">
+                            <div class="calendar-display-name-holder">
+                                Name
+                            </div>
+                            <div class="calendar-display-tag-holder">
+                                Tag
+                            </div>
+                        </div> 
+                        <div class="calendar-display-header-row-day">
+                            <div class="calendar-display-name-holder">
+                                Name
+                            </div>
+                            <div class="calendar-display-tag-holder">
+                                Tag
+                            </div>
+                        </div> 
+                        <div class="calendar-display-header-row-day">
+                            <div class="calendar-display-name-holder">
+                                Name
+                            </div>
+                            <div class="calendar-display-tag-holder">
+                                Tag
+                            </div>
+                        </div> 
+                        <div class="calendar-display-header-row-day">
+                            <div class="calendar-display-name-holder">
+                                Name
+                            </div>
+                            <div class="calendar-display-tag-holder">
+                                Tag
+                            </div>
+                        </div> 
+                        <div class="calendar-display-header-row-day">
+                            <div class="calendar-display-name-holder">
+                                Name
+                            </div>
+                            <div class="calendar-display-tag-holder">
+                                Tag
+                            </div>
+                        </div>     
+                    </div> 
+                    
+                    
+                </div>
+
+            </div>
+            <!-- EVENTS DISPLAY -->
+            <div class="events-display-body" id="events-display-body">
+
+                <div class="events-display-holder-title text-center d-flex">
+                    <div class="events-display-title">Events</div>
+                    <div class="events-display-add-event">
+                        <span id="add_event" onclick="open_create_event()">
+                            <svg class="svg-animate pointer" width="4rem" height="4rem" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Layer_1" style="enable-background:new 0 0 64 64;" version="1.1" viewBox="0 0 64 64" xml:space="preserve">
+                            <g><g id="Icon-Plus" transform="translate(28.000000, 278.000000)"><path style="fill:#c7c7c7;" d="M4-222.1c-13.2,0-23.9-10.7-23.9-23.9c0-13.2,10.7-23.9,23.9-23.9s23.9,10.7,23.9,23.9     C27.9-232.8,17.2-222.1,4-222.1L4-222.1z M4-267.3c-11.7,0-21.3,9.6-21.3,21.3s9.6,21.3,21.3,21.3s21.3-9.6,21.3-21.3     S15.7-267.3,4-267.3L4-267.3z" id="Fill-38"/><polygon style="fill:#c7c7c7;" id="Fill-39" points="-8.7,-247.4 16.7,-247.4 16.7,-244.6 -8.7,-244.6    "/><polygon style="fill:#c7c7c7;" id="Fill-40" points="2.6,-258.7 5.4,-258.7 5.4,-233.3 2.6,-233.3    "/></g></g>
+                            </svg>    
+                        </span>
+                    </div> 
+                </div>
+
+            </div>
+            <!-- EVENTS DISPLAY -->
+            <div id="side-tag-open-bar" class="div-to-change-backgroundcolor-ghost">
+                <span class="span-to-change-color-ghost">
+                    T A G
+                </span>
+            </div>
+            <div class="side-tag-holder-body div-to-change-backgroundcolor" id="side-tag-holder-tbody">                
+            </div>  
+            <div class="note-open-display-button pointer div-to-change-backgroundcolor-ghost" onclick="open_note_display()" id="note-open-display-button">
+                <span class="span-to-change-color-ghost">
+                    Notes
+                </span>
+            </div>
+            <div id="note_display">
+                <div style="position: absolute; top: 5px; right: 5px;">
+                    <button type="button" class="btn btn-danger btn-lg" onclick="close_note_display()">X</button>
+                </div>
+                <div class="note-display-title text-center span-to-change-color-ghost div-to-change-backgroundcolor div-to-change-box-shadow">
+                    Notes
+                </div>
+                <div style="position: absolute; top: 5px; left: 5px;">
+                    <span onclick="open_create_note()">
+                        <svg class="svg-animate pointer" width="4rem" height="4rem" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Layer_1" style="enable-background:new 0 0 64 64;" version="1.1" viewBox="0 0 64 64" xml:space="preserve">
+                            <g><g id="Icon-Plus" transform="translate(28.000000, 278.000000)"><path class="svg-to-change-color-background-color" d="M4-222.1c-13.2,0-23.9-10.7-23.9-23.9c0-13.2,10.7-23.9,23.9-23.9s23.9,10.7,23.9,23.9     C27.9-232.8,17.2-222.1,4-222.1L4-222.1z M4-267.3c-11.7,0-21.3,9.6-21.3,21.3s9.6,21.3,21.3,21.3s21.3-9.6,21.3-21.3     S15.7-267.3,4-267.3L4-267.3z" id="Fill-38"/><polygon class="svg-to-change-color-background-color" id="Fill-39" points="-8.7,-247.4 16.7,-247.4 16.7,-244.6 -8.7,-244.6    "/><polygon class="svg-to-change-color-background-color" id="Fill-40" points="2.6,-258.7 5.4,-258.7 5.4,-233.3 2.6,-233.3    "/></g></g>
+                        </svg>  
+                    </span>
+                </div>
+                <div class="note-display-body" id="note-display-body">
+                    
+
+                </div>
+            </div>
+        </div>         
+
+
+
+
+        <div class="modal fade" id="modal-create-user">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div style="position: absolute; top: 5px; right: 5px;">
+                        <button id="btn-close-create-user" type="button" class="btn btn-danger btn-lg" data-dismiss="modal-mensagem" onclick="">X</button>
+                    </div>
+                    <div class="modal-header create-user-header">
+                        <h4 class="modal-title">Create User</h4>
+                    </div>
+                    <div class="modal-body create-user-body">                        
+                        <div class="col-md-12">
+                            <div class="col-md-12">
+                                <p style="color: rgb(0, 80, 53);">        
+                                    Create user
+                                </p>
+                            </div>
+                            <div class="col-md-12 create-user-inner-div">
+                                <input type="text" name="" id="input-user-name" placeholder="username" oninput="update_user_creator_info()">
+                            </div>  
+                            <div class="col-md-12 create-user-inner-div" style="margin: 30px 0px 30px 0px;">
+                                <span id="user-title-demo"></span>
+                            </div>                          
+                            <div class="col-md-8 create-user-inner-div" style="box-shadow: 0px 0px 5px black;">
+                                <div class="col-md-8 d-md-inline-flex justify-content-around">
+                                    <div class="col-md-4">   
+                                        <div>
+                                            <label for="input-user-color" class="input-create-tag-label">Theme</label>                                     
+                                        </div>
+                                        <div>
+                                            <input type="color" name="" id="input-user-color" oninput="update_user_creator_info()">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">  
+                                        <div>
+                                            <label for="input-user-text-color" class="input-create-tag-label">Text</label>                                   
+                                        </div>   
+                                        <div>
+                                            <input type="color" name="" id="input-user-text-color" placeholder="username" oninput="update_user_creator_info()">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-12 create-user-inner-div">
+                                <button class="btn btn-success btn-lg" onclick="create_user()">Create</button>
+                            </div>
+                        </div>                        
+                    </div>
+                    <div class="modal-footer create-user-footer">
+                        <div class="col-md-12">
+                            <div class="col-md-12">
+                                <p style="color: rgb(80, 0, 0);">  
+                                    Delete user
+                                </p>
+                            </div>
+                            <div class="col-md-12">
+                                <select name="delete-user" id="select-delete-user">                     
+                                </select>
+                            </div>
+                            <div class="col-md-12 create-user-inner-div">
+                                <button class="btn btn-danger btn-lg" onclick="delete_user()">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>          
+        <div class="modal fade" id="modal-create-tag">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div style="position: absolute; top: 5px; right: 5px;">
+                        <button id="btn-close-create-tag" type="button" class="btn btn-danger btn-lg" data-dismiss="modal-mensagem" onclick="">X</button>
+                    </div>
+                    <div class="modal-header create-tag-header">
+                        <h4 class="modal-title"></h4>Tag</h4>
+                    </div>
+                    <div class="modal-body create-tag-body">                        
+                        <div class="col-md-12">
+                            <div class="col-md-12">
+                                <p style="color: rgb(0, 80, 53);">        
+                                    Create Tag
+                                </p>
+                            </div>
+                            <div class="col-md-12 create-tag-inner-div">
+                                <input type="text" name="" id="input-tag-name" placeholder="tag name" oninput="update_tag_creator_info()">
+                            </div>  
+                            <div class="col-md-12 create-tag-inner-div" style="margin: 30px 0px 30px 0px;">
+                                <span id="tag-title-demo"></span>
+                            </div>                          
+                            <div class="col-md-8 create-tag-inner-div" style="box-shadow: 0px 0px 5px black;">
+                                <div class="col-md-8 d-md-inline-flex justify-content-around">
+                                    <div class="col-md-4">   
+                                        <div>
+                                            <label for="input-tag-color" class="input-create-tag-label">Theme</label>                                     
+                                        </div>
+                                        <div>
+                                            <input type="color" name="" id="input-tag-color" oninput="update_tag_creator_info()">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">  
+                                        <div>
+                                            <label for="input-user-tag-color" class="input-create-tag-label">Text</label>                                   
+                                        </div>   
+                                        <div>
+                                            <input type="color" name="" id="input-tag-text-color" oninput="update_tag_creator_info()">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-12 create-tag-inner-div">
+                                <button class="btn btn-success btn-lg" onclick="create_tag()">Create</button>
+                            </div>
+                        </div>                        
+                    </div>
+                    <div class="modal-footer create-tag-footer">
+                        <div class="col-md-12">
+                            <div class="col-md-12">
+                                <p style="color: rgb(80, 0, 0);">  
+                                    Delete tag
+                                </p>
+                            </div>
+                            <div class="col-md-12">
+                                <select name="delete-tag" id="select-delete-tag">                     
+                                </select>
+                            </div>
+                            <div class="col-md-12 create-tag-inner-div">
+                                <button class="btn btn-danger btn-lg" onclick="delete_tag()">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>          
+        <div class="modal fade" id="modal-create-task">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div style="position: absolute; top: 5px; right: 5px;">
+                        <button id="btn-close-create-task" type="button" class="btn btn-danger btn-lg" data-dismiss="modal-mensagem" onclick="">X</button>
+                    </div>
+                    <div class="modal-header create-task-header" id="create-task-header">
+                        <h4 class="modal-title" id="tag-title-to-create-task" style="overflow: hidden;">Tag</h4>
+                    </div>
+                    <div class="modal-body create-task-body" id="create-task-body">  
+                        <p>
+                            Create task
+                        </p>                      
+                        <div class="col-md-12">
+                            <div class="col-md-12 create-task-inner-div">
+                                <input type="text" name="" id="input-task-name" placeholder="task name" oninput="update_task_creator_info()">
+                            </div>  
+                            <div class="col-md-12 create-task-inner-div">
+                                <input type="date" name="" id="input-task-date" oninput="update_task_creator_info()">  
+                            </div>   
+                            <div class="col-md-12 create-task-inner-div">
+                                <textarea name="" id="input-task-textarea" cols="30" rows="7" oninput="update_task_creator_info()"></textarea>    
+                            </div> 
+                            
+                            <div class="col-md-12 create-tag-inner-div">
+                                <button class="btn btn-success btn-lg" style="box-shadow: 0px 0px 5px #ffffff;" onclick="create_task()">Create</button>
+                            </div>
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+        </div> 
+        <div class="modal fade" id="modal-edit-task">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div style="position: absolute; top: 5px; right: 5px;">
+                        <button id="btn-close-edit-task" type="button" class="btn btn-danger btn-lg" data-dismiss="modal-mensagem" onclick="">X</button>
+                    </div>
+                    <div class="modal-header edit-task-header">
+                        <h4 class="modal-title">Task editor</h4>
+                    </div>
+                    <div class="modal-body edit-task-body">                        
+                        <div class="col-md-12">
+                            <div class="col-md-12 create-task-inner-div">
+                                <input type="text" name="" id="input-editor-task-name" placeholder="Task name" oninput="update_task_editor_info()">
+                            </div>  
+                            <div class="col-md-12 create-task-inner-div">
+                                <input type="date" name="" id="input-editor-task-date" oninput="update_task_editor_info()">  
+                            </div>   
+                            <div class="col-md-12 create-task-inner-div">
+                                <textarea name="" id="input-editor-task-textarea" cols="30" rows="7" oninput="update_task_editor_info()"></textarea>    
+                            </div> 
+                            
+                            <div class="col-md-12 create-task-inner-div">
+                                <button class="btn btn-success btn-lg" onclick="request_task_edit()">Edit</button>
+                            </div>
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+        </div> 
+        <div class="modal fade enable-select" id="modal-display-task">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div style="position: absolute; top: 5px; right: 5px;">
+                        <button id="btn-close-display-task" type="button" class="btn btn-danger btn-lg" data-dismiss="modal-mensagem" onclick="">X</button>
+                    </div>
+                    <div class="modal-header display-task-header" id="display-task-header">
+                        <h4 id="display-task-title" class="modal-title" id="tag-title-to-display-task" style="overflow: hidden;">
+                            Title
+                        </h4>
+                    </div>
+                    <div class="modal-header display-task-header" id="display-task-header">
+                        <h4 id="display-task-date" style="overflow: hidden; margin: auto;">
+                            Date
+                        </h4>
+                    </div>                     
+                    <div class="modal-body display-task-body" id="display-task-body">   
+                        <p id="display-task-text">
+                            Task Text
+                        </p> 
+                    </div>
+                    <div class="modal-body display-task-footer" id="display-task-footer">
+                        <div class="col-md-12 d-md-inline-flex">
+                            <div style="margin: 10px;" id="display-task-editor-spot">
+                                
+                            </div>
+                            <div style="margin: 10px;" id="display-task-delete-spot">
+                                
+                            </div>
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+        </div>          
+        <div class="modal fade" id="modal-create-event">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div style="position: absolute; top: 5px; right: 5px;">
+                        <button id="btn-close-create-event" type="button" class="btn btn-danger btn-lg" data-dismiss="modal-mensagem" onclick="">X</button>
+                    </div>
+                    <div class="modal-header create-event-header">
+                        <h4 class="modal-title">Create Event</h4>
+                    </div>
+                    <div class="modal-body create-event-body">                        
+                        <div class="col-md-12">
+                            <div class="col-md-12 create-event-inner-div">
+                                <input type="text" name="" id="input-event-name" placeholder="event name" oninput="update_event_creator_info()">
+                            </div>  
+                            <div class="col-md-12 create-event-inner-div">
+                                <input type="date" name="" id="input-event-date" oninput="update_event_creator_info()">  
+                            </div>   
+                            <div class="col-md-12 create-event-inner-div">
+                                <textarea name="" id="input-event-textarea" cols="30" rows="7" oninput="update_event_creator_info()"></textarea>    
+                            </div> 
+                            
+                            <div class="col-md-12 create-event-inner-div">
+                                <button class="btn btn-success btn-lg" onclick="create_event()">Create</button>
+                            </div>
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+        </div>  
+        <div class="modal fade" id="modal-edit-event">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div style="position: absolute; top: 5px; right: 5px;">
+                        <button id="btn-close-edit-event" type="button" class="btn btn-danger btn-lg" data-dismiss="modal-mensagem" onclick="">X</button>
+                    </div>
+                    <div class="modal-header create-event-header">
+                        <h4 class="modal-title">Event editor</h4>
+                    </div>
+                    <div class="modal-body create-event-body">                        
+                        <div class="col-md-12">
+                            <div class="col-md-12 create-event-inner-div">
+                                <input type="text" name="" id="input-editor-event-name" placeholder="event" oninput="update_event_editor_info()">
+                            </div>  
+                            <div class="col-md-12 create-event-inner-div">
+                                <input type="date" name="" id="input-editor-event-date" oninput="update_event_editor_info()">  
+                            </div>   
+                            <div class="col-md-12 create-event-inner-div">
+                                <textarea name="" id="input-editor-event-textarea" cols="30" rows="7" oninput="update_event_editor_info()"></textarea>    
+                            </div> 
+                            
+                            <div class="col-md-12 create-event-inner-div">
+                                <button class="btn btn-success btn-lg" onclick="request_event_edit()">Edit</button>
+                            </div>
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+        </div> 
+        <div class="modal fade enable-select" id="modal-display-event">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div style="position: absolute; top: 5px; right: 5px;">
+                        <button id="btn-close-display-event" type="button" class="btn btn-danger btn-lg" data-dismiss="modal-mensagem" onclick="">X</button>
+                    </div>
+                    <div class="modal-header display-event-header" id="display-event-header">
+                        <h4 id="display-event-title" class="modal-title" id="tag-title-to-display-event" style="overflow: hidden;">
+                            Title
+                        </h4>
+                    </div>
+                    <div class="modal-header display-event-header" id="display-event-header">
+                        <h4 id="display-event-date" style="overflow: hidden; margin: auto;">
+                            Date
+                        </h4>
+                    </div>                     
+                    <div class="modal-body display-event-body" id="display-event-body">   
+                        <p id="display-event-text">
+                            event Text
+                        </p> 
+                    </div>
+                    <div class="modal-body display-event-footer" id="display-event-footer">
+                        <div class="col-md-12 d-md-inline-flex">
+                            <div style="margin: 10px;" id="display-event-editor-spot">
+                                
+                            </div>
+                            <div style="margin: 10px;" id="display-event-delete-spot">
+                                
+                            </div>
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+        </div>          
+        <div class="modal fade" id="modal-create-note">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div style="position: absolute; top: 5px; right: 5px;">
+                        <button id="btn-close-create-note" type="button" class="btn btn-danger btn-lg" data-dismiss="modal-mensagem" onclick="">X</button>
+                    </div>
+                    <div class="modal-header create-note-header">
+                        <h4 class="modal-title">Create Note</h4>
+                    </div>
+                    <div class="modal-body create-note-body">                        
+                        <div class="col-md-12">
+                            <div class="col-md-12 create-note-inner-div">
+                                <input type="text" name="" id="input-note-name" placeholder="note" oninput="update_note_creator_info()">
+                            </div>   
+                            <div class="col-md-12 create-note-inner-div">
+                                <textarea name="" id="input-note-textarea" cols="30" rows="7" oninput="update_note_creator_info()"></textarea>    
+                            </div> 
+                            
+                            <div class="col-md-12 create-note-inner-div">
+                                <button class="btn btn-success btn-lg" onclick="create_note()">Create</button>
+                            </div>
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+        </div>        
+        <div class="modal fade" id="modal-create-weekrow">
+            <div class="modal-dialog">
+                <div class="modal-content" id="create-weekrow-modal-content" style="width: 90vw; position: fixed; top: 5vh; left:5vw;">
+                    <div style="position: absolute; top: 5px; right: 5px;">
+                        <button id="__btn-close-create-weekrow" type="button" class="btn btn-danger btn-lg" data-dismiss="modal-mensagem" onclick="close_create_weekrow()">X</button>
+                    </div>
+                    <div class="col-md-12 text-center" style="margin-top: 40px;">
+                        <div class="col-md-12 create-weekrow-inner-div">
+                            <input type="time" name="" id="input-week-creator-time">
+                        </div> 
+                    </div>
+                    <div class="modal-header create-weekrow-header">
+                        <div class="week-creator-body" id="week-creator-body"  style="margin-top: 20px;">
+                            <div class="week-creator-holder-title text-center d-flex">   
+                                <div class="week-creator-header-day">Seg</div> 
+                                <div class="week-creator-header-day">Ter</div> 
+                                <div class="week-creator-header-day">Qua</div> 
+                                <div class="week-creator-header-day">Qui</div> 
+                                <div class="week-creator-header-day">Sex</div>  
+                                <div class="week-creator-header-day">Sab</div>
+                                <div class="week-creator-header-day">Dom</div>                      
+                            </div>                               
+                            <div class="week-creator-holder-row text-center d-flex">    
+                                <div class="week-creator-header-row-day">
+                                    <div class="week-creator-name-holder">
+                                        <input type="text" placeholder="---------" class="input-name-week-creator" name="" id="input-week-creator-text-0">
+                                    </div>
+                                    <div class="week-creator-tag-holder">
+                                        <select class="input-select-week-creator" name="" id="input-week-creator-selector-0">
+                                            <option value="">A</option>
+                                        </select>
+                                    </div>
+                                </div> 
+                                <div class="week-creator-header-row-day">
+                                    <div class="week-creator-name-holder">
+                                        <input type="text" placeholder="---------" class="input-name-week-creator" name="" id="input-week-creator-text-1">
+                                    </div>
+                                    <div class="week-creator-tag-holder">
+                                        <select class="input-select-week-creator" name="" id="input-week-creator-selector-1">
+                                            <option value="">A</option>
+                                        </select>
+                                    </div>
+                                </div> 
+                                <div class="week-creator-header-row-day">
+                                    <div class="week-creator-name-holder">
+                                        <input type="text" placeholder="---------" class="input-name-week-creator" name="" id="input-week-creator-text-2">
+                                    </div>
+                                    <div class="week-creator-tag-holder">
+                                        <select class="input-select-week-creator" name="" id="input-week-creator-selector-2">
+                                            <option value="">A</option>
+                                        </select>
+                                    </div>
+                                </div>    
+                                <div class="week-creator-header-row-day">
+                                    <div class="week-creator-name-holder">
+                                        <input type="text" placeholder="---------" class="input-name-week-creator" name="" id="input-week-creator-text-3">
+                                    </div>
+                                    <div class="week-creator-tag-holder">
+                                        <select class="input-select-week-creator" name="" id="input-week-creator-selector-3">
+                                            <option value="">A</option>
+                                        </select>
+                                    </div>
+                                </div>   
+                                <div class="week-creator-header-row-day">
+                                    <div class="week-creator-name-holder">
+                                        <input type="text" placeholder="---------" class="input-name-week-creator" name="" id="input-week-creator-text-4">
+                                    </div>
+                                    <div class="week-creator-tag-holder">
+                                        <select class="input-select-week-creator" name="" id="input-week-creator-selector-4">
+                                            <option value="">A</option>
+                                        </select>
+                                    </div>
+                                </div> 
+                                <div class="week-creator-header-row-day">
+                                    <div class="week-creator-name-holder">
+                                        <input type="text" placeholder="---------" class="input-name-week-creator" name="" id="input-week-creator-text-5">
+                                    </div>
+                                    <div class="week-creator-tag-holder">
+                                        <select class="input-select-week-creator" name="" id="input-week-creator-selector-5"></select>
+                                    </div>
+                                </div> 
+                                <div class="week-creator-header-row-day">
+                                    <div class="week-creator-name-holder">
+                                        <input type="text" placeholder="---------" class="input-name-week-creator" name="" id="input-week-creator-text-6">
+                                    </div>
+                                    <div class="week-creator-tag-holder">
+                                        <select class="input-select-week-creator" name="" id="input-week-creator-selector-6">
+                                            <option value="">A</option>
+                                        </select>
+                                    </div>
+                                </div> 
+                            </div> 
+                            
+                        </div>
+                    </div>                    
+                    <div class="modal-body create-weekrow-body"  style="margin-top: 20px;">                        
+                        <div class="col-md-12">                                                                
+                            <div class="col-md-12 create-weekrow-inner-div">
+                                <button class="btn btn-success btn-lg" onclick="create_week_row()">Create</button>
+                            </div>
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+        </div>        
+        <div class="modal fade" id="modal-editor-weekrow">
+            <div class="modal-dialog">
+                <div class="modal-content" id="editor-weekrow-modal-content" style="width: 90vw; position: fixed; top: 5vh; left:5vw;">
+                    <div style="position: absolute; top: 5px; right: 5px;">
+                        <button id="__btn-close-editor-weekrow" type="button" class="btn btn-danger btn-lg" data-dismiss="modal-mensagem" onclick="close_edit_weekrow()">X</button>
+                    </div>
+                    <div class="col-md-12 text-center" style="margin-top: 40px;">
+                        <div class="col-md-12 editor-weekrow-inner-div">
+                            <input type="time" name="" id="input-week-editor-time">
+                        </div> 
+                    </div>
+                    <div class="modal-header edit-weekrow-header">
+                        <div class="week-editor-body" id="week-editor-body"  style="margin-top: 20px;">
+                            <div class="week-editor-holder-title text-center d-flex">   
+                                <div class="week-editor-header-day">Seg</div> 
+                                <div class="week-editor-header-day">Ter</div> 
+                                <div class="week-editor-header-day">Qua</div> 
+                                <div class="week-editor-header-day">Qui</div> 
+                                <div class="week-editor-header-day">Sex</div>  
+                                <div class="week-editor-header-day">Sab</div>
+                                <div class="week-editor-header-day">Dom</div>                      
+                            </div>                               
+                            <div class="week-editor-holder-row text-center d-flex">    
+                                <div class="week-editor-header-row-day">
+                                    <div class="week-editor-name-holder">
+                                        <input type="text" placeholder="---------" class="input-name-week-editor" name="" id="input-week-editor-text-0">
+                                    </div>
+                                    <div class="week-editor-tag-holder">
+                                        <select class="input-select-week-editor" name="" id="input-week-editor-selector-0">
+                                            <option value="">A</option>
+                                        </select>
+                                    </div>
+                                </div> 
+                                <div class="week-editor-header-row-day">
+                                    <div class="week-editor-name-holder">
+                                        <input type="text" placeholder="---------" class="input-name-week-editor" name="" id="input-week-editor-text-1">
+                                    </div>
+                                    <div class="week-editor-tag-holder">
+                                        <select class="input-select-week-editor" name="" id="input-week-editor-selector-1">
+                                            <option value="">A</option>
+                                        </select>
+                                    </div>
+                                </div> 
+                                <div class="week-editor-header-row-day">
+                                    <div class="week-editor-name-holder">
+                                        <input type="text" placeholder="---------" class="input-name-week-editor" name="" id="input-week-editor-text-2">
+                                    </div>
+                                    <div class="week-editor-tag-holder">
+                                        <select class="input-select-week-editor" name="" id="input-week-editor-selector-2">
+                                            <option value="">A</option>
+                                        </select>
+                                    </div>
+                                </div>    
+                                <div class="week-editor-header-row-day">
+                                    <div class="week-editor-name-holder">
+                                        <input type="text" placeholder="---------" class="input-name-week-editor" name="" id="input-week-editor-text-3">
+                                    </div>
+                                    <div class="week-editor-tag-holder">
+                                        <select class="input-select-week-editor" name="" id="input-week-editor-selector-3">
+                                            <option value="">A</option>
+                                        </select>
+                                    </div>
+                                </div>   
+                                <div class="week-editor-header-row-day">
+                                    <div class="week-editor-name-holder">
+                                        <input type="text" placeholder="---------" class="input-name-week-editor" name="" id="input-week-editor-text-4">
+                                    </div>
+                                    <div class="week-editor-tag-holder">
+                                        <select class="input-select-week-editor" name="" id="input-week-editor-selector-4">
+                                            <option value="">A</option>
+                                        </select>
+                                    </div>
+                                </div> 
+                                <div class="week-editor-header-row-day">
+                                    <div class="week-editor-name-holder">
+                                        <input type="text" placeholder="---------" class="input-name-week-editor" name="" id="input-week-editor-text-5">
+                                    </div>
+                                    <div class="week-editor-tag-holder">
+                                        <select class="input-select-week-editor" name="" id="input-week-editor-selector-5"></select>
+                                    </div>
+                                </div> 
+                                <div class="week-editor-header-row-day">
+                                    <div class="week-editor-name-holder">
+                                        <input type="text" placeholder="---------" class="input-name-week-editor" name="" id="input-week-editor-text-6">
+                                    </div>
+                                    <div class="week-editor-tag-holder">
+                                        <select class="input-select-week-editor" name="" id="input-week-editor-selector-6">
+                                            <option value="">A</option>
+                                        </select>
+                                    </div>
+                                </div> 
+                            </div> 
+                            
+                        </div>
+                    </div>                    
+                    <div class="modal-body edit-weekrow-body"  style="margin-top: 20px;">                        
+                        <div class="col-md-12">                                                                
+                            <div class="col-md-12 edit-weekrow-inner-div">
+                                <button class="btn btn-success btn-lg" onclick="request_edit_week_row()">&nbsp; Edit &nbsp;</button>
+                                <button class="btn btn-danger btn-lg" onclick="delete_week_row()">Delete</button>
+                            </div>
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+
+        <script src="../libs/socket.io.dev.js"></script>
+        <script src="../libs/calendar_lib_min.js"></script>
+        <script src="../js/svg.js"></script>
+        <script src="../js/buttons_inputs.js"></script>
+        <script src="../js/functions.js"></script>
+        <script src="../js/modals.js"></script>
+        <script src="../js/main.js"></script>
+        <script src="../js/functions_user.js"></script>
+        <script src="../js/functions_tag.js"></script>
+        <script src="../js/functions_task.js"></script>
+        <script src="../js/functions_events.js"></script>
+        <script src="../js/functions_notes.js"></script>
+        <script src="../js/functions_weekrow.js"></script>
+        <script src="../js/functions_side_bar_animation.js"></script>
+        <script src="../js/functions_notes_side_bar.js"></script>
+        <script src="../js/functions_color_events.js"></script>
+        <script src="../js/calendar.js"></script>
+
+        <script src="../js/initialize.js"></script>
+    </body>
+</html>

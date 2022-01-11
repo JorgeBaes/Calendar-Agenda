@@ -1,0 +1,116 @@
+.pointer{
+   cursor: pointer;
+}
+
+.tasks-display-body{
+   width: 60%;
+   margin: 5% auto 30vh auto;
+   background-color:rgb(103, 0, 221) ;
+   transition: 3s;
+}
+.tasks-display-holder{
+   width: 100%;
+   font-size: 2.5rem;
+   padding: 3px;
+   background-color: rgba(117, 117, 117, 0.65);
+   transition: 500ms;
+}
+.tasks-display-holder:hover{
+   background-color: rgba(189, 189, 189, 0.644);
+}
+.tasks-display-holder-title{
+   width: 100%;
+   font-size: 3rem;
+   padding: 2px;
+   color: #c7c7c7;
+   background-color: rgba(0, 0, 0, 0.781);
+}
+
+
+.tasks-display-title{
+   width: 100%;
+   margin-left: 13%;
+}
+
+
+
+.tasks-display-data1{
+   background-color: rgba(0, 0, 0, 0.616);
+   width: 13%;
+   margin: 0px 0% 0px 0.5%;
+   color: #ffffff;
+   height: 4rem;
+   
+   font-size: 1.2rem;
+   font-weight:lighter;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+.tasks-display-data2{
+   background-color: rgba(0, 0, 0, 0.616);
+   width: 90%;
+   overflow: hidden;
+   margin: 0px 0.5%;
+   color: white;
+   height: 4rem;
+
+   font-size: 2rem;
+   font-weight: lighter;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+.tasks-display-data3{
+   background-color: rgba(0, 0, 0, 0.521);
+   width: 15%;
+   margin: 0px 0%;
+   color: white;
+   height: 4rem;
+
+   display: flex;
+   align-items: center;
+   justify-content: center;
+} 
+
+
+
+
+
+
+
+/*
+...
+*/
+
+#tag-color-input{
+   position: fixed;
+   box-shadow: 0px 0px 3px black;
+   top: 10px;
+   right: 10px;
+   border-radius: 100%;
+   height: 40px;
+   width: 40px;
+   border: none;
+   outline: none;
+   -webkit-appearance: none;
+}
+#tag-text-color-input{
+   position: fixed;
+   box-shadow: 0px 0px 3px black;
+   top: 55px;
+   right: 15px;
+   border-radius: 100%;
+   height: 30px;
+   width: 30px;
+   border: none;
+   outline: none;
+   -webkit-appearance: none;
+}
+.color-input::-webkit-color-swatch-wrapper {
+   padding: 5px;	
+}
+.color-input::-webkit-color-swatch {    
+   border: none;
+   border-radius: 100%;
+}

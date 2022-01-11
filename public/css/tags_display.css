@@ -1,0 +1,81 @@
+
+.side-tag-holder-body{
+   width: 20%;
+   position: fixed;
+   opacity: 0;
+   pointer-events: none;
+   top: 15%;
+   background-color:rgba(0, 47, 255, 0.507) ;
+   max-height: 600px;
+   overflow-y: auto;
+   transition: 3s;
+}
+.side-tag-holder{
+   width: 100%;
+   font-size: 2rem;
+   padding: 2px;
+   background-color: rgba(117, 117, 117, 0.65);
+   transition: 500ms;
+}
+.side-tag-holder:hover{
+   background-color: rgba(190, 190, 190, 0.644);
+}
+.side-tag-holder-title{
+   width: 100%;
+   font-size: 2.5rem;
+   padding: 2px;
+   color: #c7c7c7;
+   background-color: rgba(0, 0, 0, 0.781);
+}
+
+
+.side-tag-title{
+   width: 80%;
+   margin-left: 15%;
+}
+.side-tag-add-tag{
+   width: 25%;
+}
+
+
+.tag-holder-data1{
+   background-color: rgba(0, 0, 0, 0.609);
+   width: 14%;
+   margin: 0px 0% 0px 1%;
+   color: #ffffff;
+   height: 3rem;
+}
+.tag-holder-data2{
+   background-color: rgba(0, 0, 0, 0.616);
+   width: 67.5%;
+   overflow: hidden;
+   margin: 0px 1%;
+   color: white;
+   height: 3rem;
+}
+.tag-holder-data3{
+   background-color: rgba(0, 0, 0, 0.521);
+   width: 15%;
+   margin: 0px 0%;
+   color: white;
+   height: 3rem;
+}
+
+
+
+
+#side-tag-open-bar{
+   height: 1px;
+   width: 60px;
+   position: fixed;
+   top: 15%;
+   background-color: rgba(0, 0, 0, 0.267);
+   box-shadow: 0px 0px 5px #ffffff;
+   transition: 1s;
+   writing-mode: vertical-rl;
+   text-align: center;
+   font-size: 40px;
+   color: #00000049;
+}
+
+

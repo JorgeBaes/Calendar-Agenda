@@ -1,0 +1,99 @@
+.modal-title{
+    text-align: center;
+    margin: auto;
+    font-size: 3rem;
+}
+.modal-body{
+    text-align: center;
+    margin: auto;
+    font-size: 1.5rem;
+}
+
+.modal-footer{
+    text-align: center;
+    margin: auto;
+    font-size: 1.2rem;
+}
+
+
+
+
+
+/* create-user */
+.create-user-header, .create-tag-header, .create-task-header {
+    width: 100%;
+    background: rgb(224, 255, 240);
+}
+.create-user-body, .create-tag-body, .create-task-body {
+    width: 100%;
+    background: rgb(224, 255, 240);
+}
+.create-user-footer, .create-tag-footer, .create-event-footer{
+    width: 100%;
+    background: rgb(255, 221, 221);    
+}
+
+.create-user-inner-div, .create-tag-inner-div, .create-task-inner-div, .create-event-inner-div, .create-note-inner-div{
+    margin: auto;
+    margin-top: 12px;
+}
+
+
+.create-event-body, .create-event-header, .edit-task-header, .edit-task-body, .create-note-body, .create-note-header{
+    width: 100%;
+    background-color: #fdffec;
+}
+
+#input-user-name, #input-tag-name{
+    background: rgb(255, 255, 255);
+    box-shadow: 0px 0px 5px black;
+    outline: none;
+    border: none;
+}
+
+#user-title-demo, #tag-title-demo{
+    padding: 10px 20px;
+    font-size: 1.4rem;
+}
+.input-create-tag-label{
+    font-size: 1rem;
+    margin: auto;
+}
+
+input{
+    text-align: center;
+    outline: none;
+    border: none;
+    box-shadow: 0px 0px 3px #000000;
+}
+
+#user-color-input{
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    border-radius: 100%;
+    height: 40px;
+    width: 40px;
+    border: none;
+    outline: none;
+    -webkit-appearance: none;
+}
+#user-text-color-input{
+    position: fixed;
+    top: 55px;
+    right: 15px;
+    border-radius: 100%;
+    height: 30px;
+    width: 30px;
+    border: none;
+    outline: none;
+    -webkit-appearance: none;
+}
+
+.color-input::-webkit-color-swatch-wrapper {
+    padding: 5px;	
+}
+.color-input::-webkit-color-swatch {    
+    border: none;
+    border-radius: 100%;
+}

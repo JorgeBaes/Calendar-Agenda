@@ -1,0 +1,16 @@
+{
+  "name": "agenda",
+  "version": "1.0.0",
+  "description": "agenda app pra dar e vender",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jorge Baes",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.2",
+    "lowdb": "^1.0.0",
+    "socket.io": "^2.3.0"
+  }
+}

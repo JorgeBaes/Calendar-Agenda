@@ -1,0 +1,14 @@
+.garbage-svg{
+   fill: rgb(136, 0, 0);
+}
+.editor-svg{
+   fill:rgb(0, 63, 105)
+}
+.svg-home{
+   fill: #0000001e;
+   transition: 2s;
+}
+.svg-home:hover{
+   fill: rgb(0, 0, 0);
+   transition: 1400ms;
+}

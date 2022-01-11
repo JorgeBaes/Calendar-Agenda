@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title id="tag_title">Tag</title>
+   <link href="../images/shortcut_icon.ico" type="image/png" rel="shortcut icon">
+
+    <link rel="stylesheet" href="../libs/bootstrap.min.css">
+    <script src="../libs/jQuery.js"></script>
+    <script src="../libs/bootstrap.min.js"></script>
+    <script src="../libs/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="../css/tasks_display.css">
+    <link rel="stylesheet" href="../css/modals.css">
+    <link rel="stylesheet" href="../css/svg.css">
+</head>
+<body>
+
+   <input type="color" oninput="tag_color_oninput()" onchange="tag_color_onchange()" name="" class="color-input tag-color-input" id="tag-color-input">
+   <input type="color" oninput="tag_color_oninput()" onchange="tag_color_onchange()" name="" class="color-input tag-color-input" id="tag-text-color-input">
+            
+   
+
+   <div class="tasks-display-body" id="tasks-display-body">
+      <div class="tasks-display-holder-title text-center d-flex">
+          <div class="tasks-display-title">Tasks</div>
+      </div>
+
+  </div>
+
+
+   <div class="modal fade" id="modal-edit-task">
+   <div class="modal-dialog">
+         <div class="modal-content">
+            <div style="position: absolute; top: 5px; right: 5px;">
+               <button id="btn-close-edit-task" type="button" class="btn btn-danger btn-lg" data-dismiss="modal-mensagem" onclick="">X</button>
+            </div>
+            <div class="modal-header edit-task-header">
+               <h4 class="modal-title">Task editor</h4>
+            </div>
+            <div class="modal-body edit-task-body">                        
+               <div class="col-md-12">
+                     <div class="col-md-12 create-task-inner-div">
+                        <input type="text" name="" id="input-editor-task-name" placeholder="Task name" >
+                     </div>  
+                     <div class="col-md-12 create-task-inner-div">
+                        <input type="date" name="" id="input-editor-task-date" >  
+                     </div>   
+                     <div class="col-md-12 create-task-inner-div">
+                        <textarea name="" id="input-editor-task-textarea" cols="30" rows="7" ></textarea>    
+                     </div> 
+                     
+                     <div class="col-md-12 create-task-inner-div">
+                        <button class="btn btn-success btn-lg" onclick="request_task_edit()">Edit</button>
+                     </div>
+               </div>                        
+            </div>
+         </div>
+   </div>
+   </div> 
+   <div class="modal fade enable-select" id="modal-display-task">
+   <div class="modal-dialog">
+         <div class="modal-content">
+            <div style="position: absolute; top: 5px; right: 5px;">
+               <button id="btn-close-display-task" type="button" class="btn btn-danger btn-lg" data-dismiss="modal-mensagem" onclick="">X</button>
+            </div>
+            <div class="modal-header display-task-header" id="display-task-header">
+               <h4 id="display-task-title" class="modal-title" id="tag-title-to-display-task" style="overflow: hidden;">
+                     Title
+               </h4>
+            </div>
+            <div class="modal-header display-task-header" id="display-task-header">
+               <h4 id="display-task-date" style="overflow: hidden; margin: auto;">
+                     Date
+               </h4>
+            </div>                     
+            <div class="modal-body display-task-body" id="display-task-body">   
+               <p id="display-task-text">
+                     Task Text
+               </p> 
+            </div>
+            <div class="modal-body display-task-footer" id="display-task-footer">
+               <div class="col-md-12 d-md-inline-flex">
+                     <div style="margin: 10px;" id="display-task-editor-spot">
+                        
+                     </div>
+                     <div style="margin: 10px;" id="display-task-delete-spot">
+                        
+                     </div>
+               </div>                        
+            </div>
+         </div>
+   </div>
+   </div>  
+
+   <script src="../libs/socket.io.dev.js"></script>
+   <script src="../libs/calendar_lib_min.js"></script>
+   <script src="../js/buttons_inputs.js"></script>
+   <script src="../js/functions.js"></script>
+   <script src="../js/functions_color_events.js"></script>
+   <script src="../js/functions_tasks_tag.js"></script>
+   <script src="../js/tag_main.js"></script>
+   
+   <script src="../js/modals.js"></script>
+
+</body>
+</html>

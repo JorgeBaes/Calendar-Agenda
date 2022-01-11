@@ -1,0 +1,306 @@
+
+.week-display-body{
+   width: 80%;
+   margin: 5% auto;
+   background-color:rgb(255, 255, 255) ;
+   padding: 0px;
+   transition: 3s;
+}
+.week-display-holder{
+   width: 100%;
+   font-size: 2.5rem;
+   padding: 3px;
+   background-color: rgb(117, 117, 117);
+   transition: 500ms;
+}
+.week-display-holder:hover{
+   background-color: rgb(189, 189, 189);
+}
+.week-display-holder-title{
+   width: 100%;
+   font-size: 2.4rem;
+   padding: 2px;
+   color: #c7c7c7;
+   /* background-color: rgb(255, 255, 255); */
+}
+.week-display-header-time{
+   width: 8%;
+   background-color: rgb(0, 0, 0);
+   color: rgb(255, 251, 213);
+   box-shadow: 0px 0px 10px #000000;
+   margin: 0px 1px ;
+}
+.week-display-header-day{
+   width: 13.14%;
+   background-color: rgb(0, 0, 0);
+   color: #9491bb;
+   box-shadow: 0px 0px 10px #000000;
+   margin: 0px 1px ;
+   overflow-x: hidden;
+}
+/* .svg-request-add-week-row{
+   fill: rgb(196, 216, 180);
+} */
+
+
+.week-display-holder-row{
+   width: 100%;
+   /* font-size: 3rem; */
+   height: 80px;
+   padding: 1px;
+   color: #c7c7c7;
+   background-color: rgba(255, 255, 255, 0.781);
+   transition: 1s;
+}
+.week-display-holder-row:hover{
+   background-color: rgb(0, 0, 0)
+}
+.week-display-header-row-time{
+   width: 8%;
+   background-color: rgb(0, 0, 0);
+   color: #c8c4e7;
+   margin: 0px 1px ;
+}
+.week-display-header-row-day{
+   width: 13.14%;
+   background-color: rgb(255, 255, 255);
+   box-shadow: 0px 0px 3px #000000;
+   color: rgb(0, 0, 0);
+   margin: 0px 1px ;
+   font-size: 1.5rem;
+   overflow-x: hidden;
+   overflow-y: hidden;
+   transition: 1.5s;
+}
+.week-display-header-row-day:hover{
+   box-shadow: 0px 0px 12px #000000;
+   transition: 300ms;
+}
+.week-display-tag-holder{
+   font-size: 1rem;
+   padding: 0px 0px 15px 0px;
+}
+.week-display-name-holder{
+   font-size: 1.2rem;
+   padding: 15px 0px 0px 0px;
+}
+
+
+.week-display-header-row-hours{
+   width: 100%;
+   height: 100%;
+   font-size: 1.5rem;
+   line-height: 4.5rem;
+}
+.week-display-header-row-edit-button{
+   width: 100%;
+   text-align: right;
+   position: relative;
+   bottom: 30px;
+   right: 15px;
+   /* font-size: 0.2rem; */
+   /* margin-top: 5px; */
+}
+.edit-row-button{
+   fill:#797979;
+   transition: 1s;
+}
+.edit-row-button:hover{
+   fill:#ffffff;
+}
+
+
+
+
+/* CREATE WEEKROW */
+.modal-content-weekrow{
+   width: 800px;
+   background-color: darkgreen;
+}
+
+.week-creator-body{
+   width: 96%;
+   margin: 5% auto;
+   background-color:rgba(51, 0, 109, 0.616) ;
+   transition: 3s;
+}
+.week-creator-holder{
+   width: 100%;
+   font-size: 2.5rem;
+   padding: 3px;
+   background-color: rgba(117, 117, 117, 0.65);
+   transition: 500ms;
+}
+.week-creator-holder:hover{
+   background-color: rgba(189, 189, 189, 0.644);
+}
+.week-creator-holder-title{
+   width: 100%;
+   font-size: 3rem;
+   padding: 2px;
+   color: #c7c7c7;
+   background-color: rgba(0, 0, 0, 0.781);
+}
+.week-creator-header-day{
+   width: 14.28%;
+   background-color: rgb(0, 0, 0);
+   color: rgb(255, 251, 213);
+   margin: 0px 1px ;
+   overflow-x: hidden;
+}
+
+.week-creator-holder-row{
+   width: 100%;
+   font-size: 3rem;
+   padding: 2px;
+   color: #c7c7c7;
+   background-color: rgba(0, 0, 0, 0.781);
+   transition: 1s;
+}
+.week-creator-holder-row:hover{
+   background-color: rgba(255, 255, 255, 0.781);
+}
+.week-creator-header-row-day{
+   width: 14.28%;
+   background-color: rgb(255, 255, 255);
+   color: rgb(0, 0, 0);
+   margin: 0px 1px ;
+   font-size: 1.5rem;
+   overflow-x: hidden;
+   transition: 1.5s;
+}
+.week-creator-header-row-day:hover{
+   box-shadow: 0px 0px 5px #000000;
+   transition: 200ms;
+}
+.week-creator-tag-holder{
+   font-size: 1.1rem;
+   padding: 0px 0px 15px 0px;
+}
+.week-creator-name-holder{
+   font-size: 1.3rem;
+   padding: 15px 0px 0px 0px;
+}
+
+
+.week-creator-header-row-hours{
+   font-size: 2.3rem;
+}
+.week-creator-header-row-edit-button{
+   font-size: 0.5rem;
+}
+
+#input-week-creator-time{
+   font-size: 2rem;
+}
+.input-name-week-creator{
+   width: 90%;
+   outline: none;
+   border: none;
+   box-shadow: 0px 0px 4px #000000;
+}
+.input-select-week-creator{
+   margin: 10px 0px 0px 0px;
+   outline: none;
+   border: none;
+   box-shadow: 0px 0px 4px #000000;
+}
+#create-weekrow-modal-content{
+   background-color: rgba(237, 253, 255, 0.884);
+}
+
+
+
+/* WEEK EDITOR */
+
+
+.week-editor-body{
+   width: 96%;
+   margin: 5% auto;
+   background-color:rgba(51, 0, 109, 0.616) ;
+   transition: 3s;
+}
+.week-editor-holder{
+   width: 100%;
+   font-size: 2.5rem;
+   padding: 3px;
+   background-color: rgba(117, 117, 117, 0.65);
+   transition: 500ms;
+}
+.week-editor-holder:hover{
+   background-color: rgba(189, 189, 189, 0.644);
+}
+.week-editor-holder-title{
+   width: 100%;
+   font-size: 3rem;
+   padding: 2px;
+   color: #c7c7c7;
+   background-color: rgba(0, 0, 0, 0.781);
+}
+.week-editor-header-day{
+   width: 14.28%;
+   background-color: rgb(0, 0, 0);
+   color: rgb(255, 251, 213);
+   margin: 0px 1px ;
+   overflow-x: hidden;
+}
+
+.week-editor-holder-row{
+   width: 100%;
+   font-size: 3rem;
+   padding: 2px;
+   color: #c7c7c7;
+   background-color: rgba(0, 0, 0, 0.781);
+   transition: 1s;
+}
+.week-editor-holder-row:hover{
+   background-color: rgba(255, 255, 255, 0.781);
+}
+.week-editor-header-row-day{
+   width: 14.28%;
+   background-color: rgb(255, 255, 255);
+   color: rgb(0, 0, 0);
+   margin: 0px 1px ;
+   font-size: 1.5rem;
+   overflow-x: hidden;
+   transition: 1.5s;
+}
+.week-editor-header-row-day:hover{
+   box-shadow: 0px 0px 5px #000000;
+   transition: 200ms;
+}
+.week-editor-tag-holder{
+   font-size: 1.1rem;
+   padding: 0px 0px 15px 0px;
+}
+.week-editor-name-holder{
+   font-size: 1.3rem;
+   padding: 15px 0px 0px 0px;
+}
+
+
+.week-editor-header-row-hours{
+   font-size: 2.3rem;
+}
+.week-editor-header-row-edit-button{
+   font-size: 0.5rem;
+}
+
+#input-week-editor-time{
+   font-size: 2rem;
+}
+.input-name-week-editor{
+   width: 90%;
+   outline: none;
+   border: none;
+   box-shadow: 0px 0px 4px #000000;
+}
+.input-select-week-editor{
+   margin: 10px 0px 0px 0px;
+   outline: none;
+   border: none;
+   box-shadow: 0px 0px 4px #000000;
+}
+#edit-weekrow-modal-content{
+   background-color: rgba(237, 253, 255, 0.884);
+}
