@@ -1,7 +1,6 @@
 # Calendar Agenda
 ### An aplication to schedule events and organize your daily rotine
-</br>
-</br>
+
 ## Como instalar 
 
 Primeiro você precisa ter o node.js instalado - [baixe node.js aqui](https://nodejs.org/en/download/) 
