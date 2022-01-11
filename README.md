@@ -63,7 +63,7 @@ Isto abrirá uma nova aba, a aba da Tag que pode ser vista na imagem abaixo. Nes
 <br>
 ![Img 9](https://github.com/JorgeBaes/Calendar-Agenda/blob/master/public/images/tab_page.png)
 <br>
-#detalhes
+# detalhes
 Na lista de tags, na primeira coluna é possível saber se há alguma task dentro do período de uma semana, ou se há alguma task. A imagem abaixo mostra como isto funciona:
 ![Img 9](https://github.com/JorgeBaes/Calendar-Agenda/blob/master/public/images/prop_task.png)
 
