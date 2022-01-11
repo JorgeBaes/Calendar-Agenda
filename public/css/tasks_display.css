@@ -124,10 +124,11 @@
    border-radius: 100%;
 }
 
-#user-indicator{
-   font-size: 1.5rem;
+#tag-indicator{
+   font-size: 1.8rem;
    line-height: -1.4rem;
    font-weight:100;
+   
    font-family: monospace;
    transition: 1500ms;
    transition-timing-function: ease-in-out;

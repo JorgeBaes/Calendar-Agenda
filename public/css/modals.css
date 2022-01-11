@@ -28,7 +28,7 @@
     width: 100%;
     background: rgb(224, 255, 240);
 }
-.create-user-footer, .create-tag-footer, .create-event-footer{
+.create-user-footer, .create-tag-footer, .create-event-footer,.display-task-footer{
     width: 100%;
     background: rgb(255, 221, 221);    
 }
@@ -39,7 +39,7 @@
 }
 
 
-.create-event-body, .create-event-header, .edit-task-header, .edit-task-body, .create-note-body, .create-note-header{
+.create-event-body, .create-event-header, .edit-task-header, .edit-task-body, .create-note-body, .create-note-header, .display-task-body{
     width: 100%;
     background-color: #fdffec;
 }

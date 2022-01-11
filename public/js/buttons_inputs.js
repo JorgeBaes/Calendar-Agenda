@@ -76,6 +76,13 @@ const create_task_body = document.getElementById("create-task-body")
 const modal_create_task = document.getElementById("modal-create-task")
 const tag_title_to_create_task = document.getElementById("tag-title-to-create-task")
 
+//DISPLAY TASK
+const display_task_body = [...document.getElementsByClassName("display-task-body")]
+const display_task_header = document.getElementById("display-task-header")
+const modal_display_task = document.getElementById("modal-display-task")
+const tag_title_to_display_task = document.getElementById("tag-title-to-display-task")
+const display_task_footer = document.getElementById("display-task-footer")
+const display_task_tag_title = document.getElementById("display-task-tag-title")
 
 //EVENT DISPLAY
 const events_display_body = document.getElementById("events-display-body")
@@ -126,6 +133,8 @@ const tasks_display_body = document.getElementById("tasks-display-body")
 
 //USER INDICATOR
 const user_indicator = document.getElementById("user-indicator")
+//TAG INDICATOR 
+const tag_indicator = document.getElementById("tag-indicator")
 
 
 //EDIT TAG

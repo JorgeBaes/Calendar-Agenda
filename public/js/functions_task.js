@@ -139,9 +139,21 @@ function open_task_display(user_id,tag_id,task_id){
     const _task = _tag.tasks[_tag.tasks.findIndex( el => el.id == task_id)]
     // console.log(_user,_tag,_task)
     $(`#modal-display-task`).modal('show')
-    display_task_title.innerText = _task.name
+    display_task_tag_title.innerText = `${_tag.name}`
+    display_task_title.innerText = `${_task.name}`
     display_task_text.innerText = _task.text
     display_task_date.innerText = convert_date_to_string(_task.date)
+
+    
+    display_task_body.forEach(el => {
+        el.style.backgroundColor = _tag.color+"30"
+        el.style.color = _tag.text_color   
+    })
+    modal_display_task.style.backgroundColor = _tag.color+"60"
+    display_task_header.style.backgroundColor = _tag.color+"80"
+    display_task_header.style.color = _tag.text_color
+    display_task_footer.style.backgroundColor = _tag.color+"30"
+    display_task_footer.style.color = _tag.text_color
 
     document.getElementById("display-task-editor-spot").innerHTML = 
     `

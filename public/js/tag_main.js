@@ -196,7 +196,7 @@ socket.on('update_data_users', users_list => {
    update_color_inputs()
    update_task_display()    
    update_colors_contrast_class()    
-   user_indicator.innerText = `${user.name} - ${tag.name}`  
-   user_indicator.style.color = tag.text_color+"60" 
+   tag_indicator.innerText = `${user.name} - ${tag.name}`  
+   tag_indicator.style.color = tag.text_color+"90" 
 })
 
