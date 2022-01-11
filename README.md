@@ -36,6 +36,7 @@ Ao clicar em um usuário, você será redirecionado para esta página:
 Possui nome, cor de fundo e cor de texto.
 <!-- ![Img 4](https://github.com/JorgeBaes/Calendar-Agenda/blob/master/public/images/create_tag.png) -->
 Ao criar uma Tag ela estará disponível na lista de tags e você pode criar tasks desta tag, que contém título, texto e data:
+<br>
 ![Img 5](https://github.com/JorgeBaes/Calendar-Agenda/blob/master/public/images/create_task.png)
 ## events / notes
 Os eventos são semelhantes às tasks: tem título, texto e data. As notas contém apenas título e texto.
