@@ -29,7 +29,16 @@
           "name": "Termodinâmica sólidos",
           "color": "#d1ffd4",
           "text_color": "#0a5200",
-          "tasks": []
+          "tasks": [
+            {
+              "id": "6773280887",
+              "user_id": "1571917629",
+              "tag_id": "1963438610",
+              "name": "Tarefa",
+              "date": "2022-01-15T00:00:00.000Z",
+              "text": "Ler o Cap 3 do livro e exercícios do Cap 2"
+            }
+          ]
         },
         {
           "id": "1063345727",
@@ -369,11 +378,29 @@
       "name": "Jorge",
       "color": "#fee1fa",
       "text_color": "#3d0012",
-      "tags": [],
+      "tags": [
+        {
+          "id": "0592545951",
+          "user_id": "5011069155",
+          "name": "Tag de exemplo",
+          "color": "#befee2",
+          "text_color": "#0c00b3",
+          "tasks": [
+            {
+              "id": "9491927926",
+              "user_id": "5011069155",
+              "tag_id": "0592545951",
+              "name": "Fazer compras",
+              "date": "2022-01-11T00:00:00.000Z",
+              "text": "Preciso comprar fermento para fazer pãomora e também farinha pra conseguir fazer o bolo a noite"
+            }
+          ]
+        }
+      ],
       "events": [],
       "week_schedule": [],
       "notes": []
     }
   ],
-  "state": "5011069155"
+  "state": "1571917629"
 }
