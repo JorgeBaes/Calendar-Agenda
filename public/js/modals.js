@@ -32,6 +32,18 @@ window.addEventListener('keydown', ({key}) => {
     }    
 })
 
+window.addEventListener('mousemove', event => {
+    let x = event.clientX
+    let y = event.clientY
+    if(window.innerHeight*0.92<y && window.innerWidth*0.08>x){
+        document.getElementById("tutorial_button").style.opacity = "1"        
+        document.getElementById("tutorial_button").style.transitionDuration = "500ms"
+    }else{
+        document.getElementById("tutorial_button").style.opacity = "0"
+        document.getElementById("tutorial_button").style.transitionDuration = "12s"
+    }
+})
+
 
 function open_tutorial(){    
     $(`#modal-display-tutorial`).modal('show')

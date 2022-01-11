@@ -98,3 +98,6 @@ input{
     border-radius: 100%;
 }
 
+#tutorial_button{
+    transition: 500ms;
+}

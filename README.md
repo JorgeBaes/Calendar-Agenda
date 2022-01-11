@@ -1,12 +1,11 @@
 # Calendar Agenda
 ### An aplication to schedule events and organize your daily rotine
-# 
-#
-
+</br>
+</br>
 ## Como instalar 
 
 Primeiro você precisa ter o node.js instalado - [baixe node.js aqui](https://nodejs.org/en/download/) 
-Depois de instalar o node, baixe este repositório e descompacte-o para uma pasta. 
+Depois de instalar o node, baixe este repositório [clicando aqui](https://github.com/JorgeBaes/Calendar-Agenda/archive/refs/heads/master.zip) e descompacte-o para uma pasta. 
 Crie um atalho do arquivo batch 'Agenda.bat', se quiser adicionar o ícone do aplicativo você pode encontrá-lo neste caminho public/images/shortcut_icon.ico
 
 ## Como usar
@@ -69,7 +68,7 @@ Na lista de tags, na primeira coluna é possível saber se há alguma task dentr
 ![Img 10](https://github.com/JorgeBaes/Calendar-Agenda/blob/master/public/images/prop_task.png)
 </br>
 ### Explore o aplicativo e descubra como utilizá-lo da melhor forma! Eu também estou nessa missão, hihi. 
-#### Qualquer bug relatar para o email jorgebaescaetano@gmail.com 
+#### Qualquer sugestão, dúvida ou bug este é o email para contato jorgebaescaetano@gmail.com 
 
 
 
