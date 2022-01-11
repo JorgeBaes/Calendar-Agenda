@@ -43,7 +43,6 @@ Ao criar uma Tag ela estará disponível na lista de tags e você pode criar tas
 <br>
 # events / notes
 Os eventos são semelhantes às tasks: tem título, texto e data. As notas contém apenas título e texto.
-<!-- ![Img 6](https://github.com/JorgeBaes/Calendar-Agenda/blob/master/public/images/create_event_notes.png) -->
 <br>
 # calendar
 O calendário mostra todas as tasks (quadrado) e eventos (circulos) marcados. E para acessar as tasks e eventos, clique neles no calendário:
